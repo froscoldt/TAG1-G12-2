@@ -45,14 +45,14 @@ public class LookAndFeel {
                                      DESC_6,DESC_7,DESC_8,DESC_9,DESC_10,
                                      DESC_11,DESC_12,DESC_13,DESC_14,DESC_15,
                                      DESC_16,DESC_17,DESC_18,DESC_19,DESC_20,
-                                     DESC_21,DESC_22,DESC_23,DESC_24,DESC_25};
+                                     DESC_21,DESC_22,DESC_23,DESC_24};
 
     public String[] getDescriptions() {
         return descriptions;
     }
     
     public String getRandomDesc() {
-        return descriptions[random.nextInt(25)];
+        return descriptions[random.nextInt(24)];
         
     }
     
