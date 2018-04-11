@@ -1,8 +1,11 @@
 
 package tag1;
 
-public class LookAndFeel {
+import java.util.Random;
 
+public class LookAndFeel {
+    
+    Random random = new Random();
     private final String DESC_1 = "A dim bluish light suffuses this chamber, its source obvious at a glance. Blue-glowing lichen and violet-glowing moss cling to the ceiling and spread across the floor";
     private final String DESC_2 = "A crack in the ceiling above the middle of the north wall allows a trickle of water to flow down to the floor. The water pools near the base of the wall, and a rivulet runs along the wall an out into the hall.";
     private final String DESC_3 = "This small chamber seems divided into three parts. The first has several hooks on the walls from which hang dusty robes. An open curtain separates that space from the next, which has a dry basin set in the floor.";
@@ -15,6 +18,11 @@ public class LookAndFeel {
 
     public String[] getDescriptions() {
         return descriptions;
+    }
+    
+    public String getRandomDesc() {
+        return descriptions[random.nextInt(8)];
+        
     }
     
 }
