@@ -5,8 +5,8 @@ public class Room {
     private String name;
     private Room north, west, south, east;
 
-    public Room(String name) {
-        this.name = name;
+    public Room(String desc) {
+        this.name = desc;
     }
     
     public void setNorth(Room north) {

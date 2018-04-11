@@ -14,6 +14,14 @@ public class Player {
         this.location = location;
     }
 
+    public Room getLocation() {
+        return location;
+    }
+
+    public void setLocation(Room location) {
+        this.location = location;
+    }
+
     public String getName() {
         return name;
     }

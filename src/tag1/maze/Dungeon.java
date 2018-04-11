@@ -2,32 +2,34 @@ package tag1.maze;
 
 import tag1.maze.Room;
 import java.util.ArrayList;
+import tag1.LookAndFeel;
 import tag1.Player;
 
 public class Dungeon {
-
+    LookAndFeel laf = new LookAndFeel();
+    
     public Room createMaze() {
 
-        Room room1 = new Room("");
-        Room room2 = new Room("");
-        Room room3 = new Room("");
-        Room room4 = new Room("");
+        Room room1 = new Room(laf.getRandomDesc());
+        Room room2 = new Room(laf.getRandomDesc());
+        Room room3 = new Room(laf.getRandomDesc());
+        Room room4 = new Room(laf.getRandomDesc());
         Room startRoom = new Room("");
-        Room room6 = new Room("");
-        Room room7 = new Room("");
-        Room room8 = new Room("");
-        Room room9 = new Room("");
-        Room room10 = new Room("");
-        Room room11 = new Room("");
-        Room room12 = new Room("");
-        Room room13 = new Room("");
-        Room room14 = new Room("");
-        Room room15 = new Room("");
-        Room room16 = new Room("");
-        Room room17 = new Room("");
-        Room room18 = new Room("");
-        Room room19 = new Room("");
-        Room room20 = new Room("");
+        Room room6 = new Room(laf.getRandomDesc());
+        Room room7 = new Room(laf.getRandomDesc());
+        Room room8 = new Room(laf.getRandomDesc());
+        Room room9 = new Room(laf.getRandomDesc());
+        Room room10 = new Room(laf.getRandomDesc());
+        Room room11 = new Room(laf.getRandomDesc());
+        Room room12 = new Room(laf.getRandomDesc());
+        Room room13 = new Room(laf.getRandomDesc());
+        Room room14 = new Room(laf.getRandomDesc());
+        Room room15 = new Room(laf.getRandomDesc());
+        Room room16 = new Room(laf.getRandomDesc());
+        Room room17 = new Room(laf.getRandomDesc());
+        Room room18 = new Room(laf.getRandomDesc());
+        Room room19 = new Room(laf.getRandomDesc());
+        Room room20 = new Room(laf.getRandomDesc());
 
         // room 1
         room1.setEast(room2);
