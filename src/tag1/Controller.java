@@ -12,6 +12,7 @@ public class Controller {
         Room starting = dun.createMaze();
         tui.intro();
         Player player = new Player("", 0, starting);
+        tui.printString(player.getLocation().getDesc());
         while (true) {
             awaitingAnswer(player);
         }
@@ -24,22 +25,20 @@ public class Controller {
         String asking = tui.askForMove();
         action = ac.convert(asking);
 
-        
-        while (action == null) {            
-            
-
+        while (action == null) {
             if (asking.equalsIgnoreCase("help")) {
                 tui.help();
-                continue;
             }
             if (asking.equalsIgnoreCase("quit")) {
-                tui.quit(); // kommer ikke til at se dette.
+                tui.quit();
                 System.exit(0);
             }
 
             tui.error();
+            asking = tui.askForMove();
+            action = ac.convert(asking);
         }
-        
+
         Room location = player.getLocation();
         Room newLocation = null;
 
@@ -66,14 +65,11 @@ public class Controller {
         }
 
         if (newLocation == null) {
-            // tui errorDirection ? 
-            
-            
+            tui.noDirection();
         } else {
             player.setLocation(newLocation);
-            // tui desc.
+            tui.printString(player.getLocation().getDesc());
         }
-
 
     }
 

@@ -2,11 +2,16 @@
 package tag1.maze;
 public class Room {
     
-    private String name;
+    private String name,desc;
     private Room north, west, south, east;
 
-    public Room(String desc) {
-        this.name = desc;
+    public String getName() {
+        return name;
+    }
+    
+
+    public Room(String name, String desc) {
+        this.desc = desc;
     }
     
     public void setNorth(Room north) {
@@ -40,4 +45,10 @@ public class Room {
     public Room getEast() {
         return east;
     }
+
+    public String getDesc() {
+        return desc;
+    }
+    
+    
 }
