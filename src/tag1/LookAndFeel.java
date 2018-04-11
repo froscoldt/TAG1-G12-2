@@ -15,24 +15,40 @@ public class LookAndFeel {
     private final String DESC_6 = "This otherwise bare room has one distinguishing feature. \nThe stone around one of the other doors has been pulled over its edges, as though the rock were as soft as clay and could be moved with fingers.";
     private final String DESC_7 = "A 30-foot-tall demonic idol dominates this room of black stone.\nThe potbellied statue is made of red stone, and its grinning face holds what looks to be two large rubies in place of eyes.";
     private final String DESC_8 = "You open the door, and the reek of garbage assaults your nose.\nLooking inside, you see a pile of refuse and offal that nearly reaches the ceiling.\nIn the ceiling above it is a small hole that is roughly as wide as two human hands.";
-    private final String DESC_9 = "You seem to found the exit";
+    private final String DESC_9 = "";
+    private final String DESC_10 = "";
+    private final String DESC_11 = "";
+    private final String DESC_12 = "";
+    private final String DESC_13 = "";
+    private final String DESC_14 = "";
+    private final String DESC_15 = "";
+    private final String DESC_16 = "";
+    private final String DESC_17 = "";
+    private final String DESC_18 = "";
+    private final String DESC_19 = "";
+    private final String DESC_20 = "";
+    private final String DESC_21 = "";
+    private final String DESC_22 = "";
+    private final String DESC_23 = "";
+    private final String DESC_24 = "";
+    private final String DESC_25 = "You seem to found the exit";
 
     public String getDESC_0() {
         return DESC_0;
     }
 
-    public String getDESC_9() {
-        return DESC_9;
+    public String getDESC_25() {
+        return DESC_25;
     }
     
-    private String[] descriptions = {DESC_1,DESC_2,DESC_3,DESC_4,DESC_5,DESC_6,DESC_7,DESC_8};
+    private String[] descriptions = {DESC_1,DESC_2,DESC_3,DESC_4,DESC_5,DESC_6,DESC_7,DESC_8,DESC_9,DESC_10,DESC_11,DESC_12,DESC_13,DESC_14,DESC_15,DESC_16,DESC_17,DESC_18,DESC_19,DESC_20,DESC_21,DESC_22,DESC_23,DESC_24,DESC_25};
 
     public String[] getDescriptions() {
         return descriptions;
     }
     
     public String getRandomDesc() {
-        return descriptions[random.nextInt(8)];
+        return descriptions[random.nextInt(25)];
         
     }
     

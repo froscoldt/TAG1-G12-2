@@ -1,9 +1,6 @@
 package tag1.maze;
 
-import tag1.maze.Room;
-import java.util.ArrayList;
 import tag1.LookAndFeel;
-import tag1.Player;
 
 public class Dungeon {
     LookAndFeel laf = new LookAndFeel();
@@ -29,7 +26,7 @@ public class Dungeon {
         Room room17 = new Room("room17",laf.getRandomDesc());
         Room room18 = new Room("room18",laf.getRandomDesc());
         Room room19 = new Room("room19",laf.getRandomDesc());
-        Room room20 = new Room("room20",laf.getDESC_9());
+        Room room20 = new Room("room20",laf.getDESC_25());
 
         // room 1
         room1.setEast(room2);
