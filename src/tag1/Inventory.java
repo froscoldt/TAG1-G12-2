@@ -4,10 +4,9 @@ import java.util.ArrayList;
 import tag2.items.Items;
 
 public class Inventory {
-    
+
     private ArrayList inventory = new ArrayList();
 
-    // Items items = new Items();
 
     public ArrayList getInventory() {
         return inventory;

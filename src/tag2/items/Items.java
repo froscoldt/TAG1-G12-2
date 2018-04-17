@@ -2,12 +2,13 @@ package tag2.items;
 
 import tag1.maze.Room;
 
-
 public class Items {
 
     private String name;
     private Room location;
 
+    
+    
     public Room getLocation() {
         return location;
     }
@@ -22,6 +23,10 @@ public class Items {
 
     public void drop() {
         // drop it
+    }
+
+    public String getName() {
+        return name;
     }
 
 }
