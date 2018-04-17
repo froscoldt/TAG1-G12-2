@@ -8,7 +8,6 @@ public class Room {
     public String getName() {
         return name;
     }
-    
 
     public Room(String name, String desc) {
         this.desc = desc;
