@@ -7,11 +7,21 @@ public class Player {
     private String name;
     private int health;
     private Room location;
+    private Object[] inventory = new Object[5];
+
 
     public Player(String name, int health, Room location) {
         this.name = name;
         this.health = health;
         this.location = location;
+    }
+    
+    public Object[] getInventory() {
+        return inventory;
+    }
+
+    public void setInventory(Object[] inventory) {
+        this.inventory = inventory;
     }
 
     public Room getLocation() {
