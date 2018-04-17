@@ -1,24 +1,20 @@
 package tag1;
 
+import java.util.ArrayList;
 import tag2.items.Items;
 
 public class Inventory {
     
-    private Object[] inventory = new Object[5];
+    private ArrayList inventory = new ArrayList();
 
     // Items items = new Items();
-    
-    
-    
-    
-    public Object[] getInventory() {
+
+    public ArrayList getInventory() {
         return inventory;
     }
 
-    public void setInventory(Object[] inventory) {
+    public void setInventory(ArrayList inventory) {
         this.inventory = inventory;
     }
-    
-    
     
 }
