@@ -32,22 +32,31 @@ public class PlayerTest {
 
     @Test
     public void createPlayer() {
-        Player p = new Player("", start);
+        PlayerDemo p = new PlayerDemo("", start);
         Room currentRoom = p.getLocation();
         assertEquals("Start", start.getDesc());
     }
     
     @Test
     public void testGoSouth() {
-        Player p = new Player("", start);
-        p.setLocation(south);
-        //Metode i Controller skal forenkles i flere små metoder
-        //ellers kan der ikke foretages test
-        
+        PlayerDemo p = new PlayerDemo("", start);
+        boolean result = p.goSouth();
+        assertTrue(result);
     }
     
+    @Test
     public void testIfPlayerCanGoToRoom() {
-        
+        PlayerDemo p = new PlayerDemo("", start);
+        boolean result = p.goEast();
+        assertFalse(result);
+    }
+    
+    @Test
+    public void testControllerForMove() {
+        PlayerDemo p = new PlayerDemo("", start);
+        Controller c = new Controller();
+        c.move(p, "go south");
+        assertEquals("South", p.getLocation().getDesc());
     }
     
 }
