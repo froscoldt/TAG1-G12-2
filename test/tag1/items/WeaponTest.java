@@ -8,7 +8,7 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 import tag1.Player;
 import tag1.maze.Room;
-import tag2.items.Items;
+import tag2.items.Item;
 import tag2.items.Weapon;
 
 public class WeaponTest {
@@ -17,7 +17,7 @@ public class WeaponTest {
     public void testUseWeapon() {
         //arrange
         Player player = new Player("", null);
-        Items item = new Weapon("", 10);
+        Item item = new Weapon("", 10);
         int expectedDamageRes = 15;
 
         //act

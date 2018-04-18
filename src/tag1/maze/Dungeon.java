@@ -1,33 +1,39 @@
 package tag1.maze;
 
+import java.util.Random;
 import tag1.LookAndFeel;
+import tag2.items.Item;
+import tag2.items.Weapon;
 
 public class Dungeon {
-    LookAndFeel laf = new LookAndFeel();
-    
-    
-    public Room createMaze() {
 
-        Room room1 = new Room("room1",laf.getRandomDesc());
-        Room room2 = new Room("room2",laf.getRandomDesc());
-        Room room3 = new Room("room3",laf.getRandomDesc());
-        Room room4 = new Room("room4",laf.getRandomDesc());
-        Room startRoom = new Room("room5",laf.getDESC_0());
-        Room room6 = new Room("room6",laf.getRandomDesc());
-        Room room7 = new Room("room7",laf.getRandomDesc());
-        Room room8 = new Room("room8",laf.getRandomDesc());
-        Room room9 = new Room("room9",laf.getRandomDesc());
-        Room room10 = new Room("room10",laf.getRandomDesc());
-        Room room11 = new Room("room11",laf.getRandomDesc());
-        Room room12 = new Room("room12",laf.getRandomDesc());
-        Room room13 = new Room("room13",laf.getRandomDesc());
-        Room room14 = new Room("room14",laf.getRandomDesc());
-        Room room15 = new Room("room15",laf.getRandomDesc());
-        Room room16 = new Room("room16",laf.getRandomDesc());
-        Room room17 = new Room("room17",laf.getRandomDesc());
-        Room room18 = new Room("room18",laf.getRandomDesc());
-        Room room19 = new Room("room19",laf.getRandomDesc());
-        Room room20 = new Room("room20",laf.getDESC_25());
+    LookAndFeel laf = new LookAndFeel();
+  
+    
+    
+
+    public Room createMaze() {
+        Item item = new Weapon("sword",10);
+        Room room1 = new Room("room1", laf.getRandomDesc(), item);
+        Room room2 = new Room("room2", laf.getRandomDesc());
+        Room room3 = new Room("room3", laf.getRandomDesc());
+        Room room4 = new Room("room4", laf.getRandomDesc());
+        Room startRoom = new Room("room5", laf.getDESC_0());
+        Room room6 = new Room("room6", laf.getRandomDesc());
+        Room room7 = new Room("room7", laf.getRandomDesc());
+        Room room8 = new Room("room8", laf.getRandomDesc());
+        Room room9 = new Room("room9", laf.getRandomDesc());
+        Room room10 = new Room("room10", laf.getRandomDesc());
+        Room room11 = new Room("room11", laf.getRandomDesc());
+        Room room12 = new Room("room12", laf.getRandomDesc());
+        Room room13 = new Room("room13", laf.getRandomDesc());
+        Room room14 = new Room("room14", laf.getRandomDesc());
+        Room room15 = new Room("room15", laf.getRandomDesc());
+        Room room16 = new Room("room16", laf.getRandomDesc());
+        Room room17 = new Room("room17", laf.getRandomDesc());
+        Room room18 = new Room("room18", laf.getRandomDesc());
+        Room room19 = new Room("room19", laf.getRandomDesc());
+        Room room20 = new Room("room20", laf.getDESC_25());
 
         // room 1
         room1.setEast(room2);
@@ -106,12 +112,8 @@ public class Dungeon {
 
         // room 20
         room20.setNorth(room16);
-        
+
         return startRoom;
     }
-    
-    
-    
-    
-    
+
 }

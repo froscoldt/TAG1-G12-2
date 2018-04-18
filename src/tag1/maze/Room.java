@@ -1,16 +1,29 @@
 
 package tag1.maze;
+
+import tag2.items.Item;
+
 public class Room {
     
     private String name,desc;
     private Room north, west, south, east;
+    private Item roomItem;
 
     public String getName() {
         return name;
     }
 
-    public Room(String name, String desc) {
+    public Room(String name, String desc, Item item) {
         this.desc = desc;
+        this.roomItem = item;
+    }
+
+    public void setRoomItem(Item roomItem) {
+        this.roomItem = roomItem;
+    }
+
+    public Item getRoomItem() {
+        return roomItem;
     }
     
     public void setNorth(Room north) {

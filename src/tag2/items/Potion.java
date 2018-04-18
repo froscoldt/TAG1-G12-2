@@ -2,7 +2,7 @@ package tag2.items;
 
 import tag1.Player;
 
-public class Potion extends Items {
+public class Potion extends Item {
 
     private int healing;
 

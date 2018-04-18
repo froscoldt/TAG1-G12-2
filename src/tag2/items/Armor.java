@@ -11,7 +11,7 @@ import tag1.Player;
  *
  * @author Mark
  */
-public class Armor extends Items {
+public class Armor extends Item {
     
     private int armor;
 
