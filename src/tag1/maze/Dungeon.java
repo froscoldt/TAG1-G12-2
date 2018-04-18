@@ -9,11 +9,15 @@ public class Dungeon {
 
     LookAndFeel laf = new LookAndFeel();
   
-    
-    
+    Item[] item = new Item[3];
+//    Item item = null;
+//    item[0] = Item itemnew Potion("",5);
+//            
+//    
 
     public Room createMaze() {
         Item item = new Weapon("sword",10);
+        
         Room room1 = new Room("room1", laf.getRandomDesc(), item);
         Room room2 = new Room("room2", laf.getRandomDesc(), null);
         Room room3 = new Room("room3", laf.getRandomDesc(), null);

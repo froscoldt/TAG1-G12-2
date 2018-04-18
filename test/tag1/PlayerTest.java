@@ -32,14 +32,14 @@ public class PlayerTest {
 
     @Test
     public void createPlayer() {
-        PlayerDemo p = new PlayerDemo("", start);
+        Player p = new Player("", start);
         Room currentRoom = p.getLocation();
         assertEquals("Start", start.getDesc());
     }
 
     @Test
     public void testControllerForMove() {
-        PlayerDemo p = new PlayerDemo("", start);
+        Player p = new Player("", start);
         Controller c = new Controller();
         c.awaitingAnswer(p);
         assertEquals("South", p.getLocation().getDesc());
