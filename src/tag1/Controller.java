@@ -11,7 +11,7 @@ public class Controller {
     public void go() {
         Room starting = dun.createMaze();
         tui.intro();
-        Player player = new Player("", 0, starting);
+        Player player = new Player("", starting);
         tui.printString(player.getLocation().getDesc());
         while (true) {
             awaitingAnswer(player);

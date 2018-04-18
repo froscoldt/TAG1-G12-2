@@ -32,13 +32,14 @@ public class PlayerTest {
 
     @Test
     public void createPlayer() {
-        Player p = new Player("", 100, start);
+        Player p = new Player("", start);
         Room currentRoom = p.getLocation();
         assertEquals("Start", start.getDesc());
     }
     
+    @Test
     public void testGoSouth() {
-        Player p = new Player("", 100, start);
+        Player p = new Player("", start);
         p.setLocation(south);
         //Metode i Controller skal forenkles i flere små metoder
         //ellers kan der ikke foretages test

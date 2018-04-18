@@ -5,6 +5,7 @@ import tag1.LookAndFeel;
 public class Dungeon {
     LookAndFeel laf = new LookAndFeel();
     
+    
     public Room createMaze() {
 
         Room room1 = new Room("room1",laf.getRandomDesc());
