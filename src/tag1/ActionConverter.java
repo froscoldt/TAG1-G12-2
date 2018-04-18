@@ -12,6 +12,8 @@ public class ActionConverter {
             return Action.GoEast;
         } else if (str.equalsIgnoreCase("go west")) {
             return Action.GoWest;
+        } else if (str.equalsIgnoreCase("pick up")) {
+            return Action.pickUp;
         } else {
             return null;
         }
