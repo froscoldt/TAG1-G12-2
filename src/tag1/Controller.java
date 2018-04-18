@@ -8,7 +8,7 @@ public class Controller {
     TUI tui = new TUI();
     Dungeon dun = new Dungeon();
     Room starting = dun.createMaze();
-    PlayerDemo p = new PlayerDemo("", starting);
+    Player p = new Player("", starting);
 
     public void go() {
         tui.intro();
@@ -18,22 +18,8 @@ public class Controller {
         }
     }
     
-    public void move(PlayerDemo p, String input) {
-        if(input.equalsIgnoreCase("go east") && p.goEast() == true) {
-            p.setLocation(p.getLocation().getEast());
-        }
-        if(input.equalsIgnoreCase("go north") && p.goNorth() == true) {
-            p.setLocation(p.getLocation().getNorth());
-        }
-        if(input.equalsIgnoreCase("go south") && p.goSouth() == true) {
-            p.setLocation(p.getLocation().getSouth());
-        }
-        if(input.equalsIgnoreCase("go west") && p.goWest() == true) {
-            p.setLocation(p.getLocation().getWest());
-        }
-    }
 
-    public void awaitingAnswer(PlayerDemo player) {
+    public void awaitingAnswer(Player player) {
         ActionConverter ac = new ActionConverter();
         Action action;
         String asking = tui.askForMove();

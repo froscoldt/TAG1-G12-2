@@ -20,12 +20,12 @@ import tag1.maze.Room;
 public class PlayerTest {
 
     Room start, south, southEast;
-    
+
     @Before
     public void setup() {
-        start = new Room("", "Start");
-        south = new Room("", "South");
-        southEast = new Room("", "SouthsEast");
+        start = new Room("", "Start", null);
+        south = new Room("", "South", null);
+        southEast = new Room("", "SouthsEast", null);
         start.setSouth(south);
         south.setEast(southEast);
     }
@@ -36,27 +36,13 @@ public class PlayerTest {
         Room currentRoom = p.getLocation();
         assertEquals("Start", start.getDesc());
     }
-    
-    @Test
-    public void testGoSouth() {
-        PlayerDemo p = new PlayerDemo("", start);
-        boolean result = p.goSouth();
-        assertTrue(result);
-    }
-    
-    @Test
-    public void testIfPlayerCanGoToRoom() {
-        PlayerDemo p = new PlayerDemo("", start);
-        boolean result = p.goEast();
-        assertFalse(result);
-    }
-    
+
     @Test
     public void testControllerForMove() {
         PlayerDemo p = new PlayerDemo("", start);
         Controller c = new Controller();
-        c.move(p, "go south");
+        c.awaitingAnswer(p);
         assertEquals("South", p.getLocation().getDesc());
     }
-    
+
 }
