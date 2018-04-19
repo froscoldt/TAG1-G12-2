@@ -13,27 +13,47 @@ Item[] items = new Item[3];
 
     public Room createMaze() {
         Item item = new Weapon("sword","An item",10);
-        
-        Room room1 = new Room("room1", laf.getRandomDesc(), null);
-        Room room2 = new Room("room2", laf.getRandomDesc(), null);
-        Room room3 = new Room("room3", laf.getRandomDesc(), null);
-        Room room4 = new Room("room4", laf.getRandomDesc(), null);
+        Item item1 = new Weapon("dagger","An item",5);
+        Item item2 = new Weapon("sword","An item",10);
+        Item item3 = new Weapon("sword","An item",10);
+        Item item4 = new Weapon("sword","An item",10);
+        Item item5 = new Weapon("sword","An item",10);
+        Item item6 = new Weapon("sword","An item",10);
+        Item item7 = new Weapon("sword","An item",10);
+        Item item8 = new Weapon("sword","An item",10);
+        Item item9 = new Weapon("sword","An item",10);
+        Item item10 = new Weapon("sword","An item",10);
+        Item item11 = new Weapon("sword","An item",10);
+        Item item12 = new Weapon("sword","An item",10);
+        Item item13 = new Weapon("sword","An item",10);
+        Item item14 = new Weapon("sword","An item",10);
+        Item item15 = new Weapon("sword","An item",10);
+        Item item16 = new Weapon("sword","An item",10);
+        Item item17 = new Weapon("sword","An item",10);
+        Item item18 = new Weapon("sword","An item",10);
+        Item item19 = new Weapon("sword","An item",10);
+
+
+        Room room1 = new Room("room1", laf.getRandomDesc(), item1);
+        Room room2 = new Room("room2", laf.getRandomDesc(), item2);
+        Room room3 = new Room("room3", laf.getRandomDesc(), item3);
+        Room room4 = new Room("room4", laf.getRandomDesc(), item4);
         Room startRoom = new Room("room5", laf.getDESC_0(), item);
-        Room room6 = new Room("room6", laf.getRandomDesc(), null);
-        Room room7 = new Room("room7", laf.getRandomDesc(), null);
-        Room room8 = new Room("room8", laf.getRandomDesc(), null);
-        Room room9 = new Room("room9", laf.getRandomDesc(), null);
-        Room room10 = new Room("room10", laf.getRandomDesc(), null);
-        Room room11 = new Room("room11", laf.getRandomDesc(), null);
-        Room room12 = new Room("room12", laf.getRandomDesc(), null);
-        Room room13 = new Room("room13", laf.getRandomDesc(), null);
-        Room room14 = new Room("room14", laf.getRandomDesc(), null);
-        Room room15 = new Room("room15", laf.getRandomDesc(), null);
-        Room room16 = new Room("room16", laf.getRandomDesc(), null);
-        Room room17 = new Room("room17", laf.getRandomDesc(), null);
-        Room room18 = new Room("room18", laf.getRandomDesc(), null);
-        Room room19 = new Room("room19", laf.getRandomDesc(), null);
-        Room room20 = new Room("room20", laf.getDESC_25(), null);
+        Room room6 = new Room("room6", laf.getRandomDesc(), item5);
+        Room room7 = new Room("room7", laf.getRandomDesc(), item6);
+        Room room8 = new Room("room8", laf.getRandomDesc(), item7);
+        Room room9 = new Room("room9", laf.getRandomDesc(), item8);
+        Room room10 = new Room("room10", laf.getRandomDesc(), item9);
+        Room room11 = new Room("room11", laf.getRandomDesc(), item10);
+        Room room12 = new Room("room12", laf.getRandomDesc(), item11);
+        Room room13 = new Room("room13", laf.getRandomDesc(), item12);
+        Room room14 = new Room("room14", laf.getRandomDesc(), item13);
+        Room room15 = new Room("room15", laf.getRandomDesc(), item14);
+        Room room16 = new Room("room16", laf.getRandomDesc(), item15);
+        Room room17 = new Room("room17", laf.getRandomDesc(), item16);
+        Room room18 = new Room("room18", laf.getRandomDesc(), item17);
+        Room room19 = new Room("room19", laf.getRandomDesc(), item18);
+        Room room20 = new Room("room20", laf.getDESC_25(), item19);
 
         // room 1
         room1.setEast(room2);

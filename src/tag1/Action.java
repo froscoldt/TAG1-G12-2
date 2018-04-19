@@ -10,4 +10,6 @@ public enum Action {
     pickUp,
     checkInventory,
     use;
+    
+    
 }

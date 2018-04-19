@@ -56,6 +56,14 @@ public class TUI {
     
     }
     
+    public void noItemInRoom() {
+        System.out.println("You see no items in the room.");
+    }
+    
+    
+    // 
+    
+    
     public void validRoomChange(Boolean bool) {
         if (bool == true) {
             System.out.println("You entered the room succesfully");
@@ -69,8 +77,4 @@ public class TUI {
             System.out.println(object.toString());
         }
     }
-    public void noItemInRoom() {
-        System.out.println("You see no items in the room.");
-    }
-    
 }
