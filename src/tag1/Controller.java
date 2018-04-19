@@ -2,7 +2,7 @@ package tag1;
 
 import tag1.maze.Dungeon;
 import tag1.maze.Room;
-import tag2.items.Item;
+
 
 public class Controller {
 
@@ -19,22 +19,6 @@ public class Controller {
         }
     }
 
-    /*
-    public void awaitingAnswer2() {
-        - ask for player input
-        tui.askForMove();
-        save the above input to a string. 
-        place that string into something that can use it.
-    
-        run the input through cases / match strings in an array.
-        depending on the match, do something. 
-        if none matches, return String "invalid input"
-    
-    
-    }
-    
-    
-     */
     public void awaitingAnswer(Player player) {
         ActionConverter ac = new ActionConverter();
         Action action;
