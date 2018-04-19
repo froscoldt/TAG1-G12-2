@@ -3,7 +3,9 @@ package tag1.maze;
 import java.util.Random;
 import tag1.LookAndFeel;
 import tag2.items.Item;
+import tag2.items.Potion;
 import tag2.items.Weapon;
+import tag2.items.Armor;
 
 public class Dungeon {
 
@@ -14,7 +16,7 @@ Item[] items = new Item[3];
     public Room createMaze() {
         Item item = new Weapon("sword","An item",10);
         Item item1 = new Weapon("dagger","An item",5);
-        Item item2 = new Weapon("sword","An item",10);
+        Item item2 = new Potion("sword","An item",10);
         Item item3 = new Weapon("sword","An item",10);
         Item item4 = new Weapon("sword","An item",10);
         Item item5 = new Weapon("sword","An item",10);

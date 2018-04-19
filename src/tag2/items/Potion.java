@@ -9,11 +9,19 @@ public class Potion extends Item {
     public Potion(String name, String description, int healing) {
         super(name, description);
         this.healing = healing;
-
     }
 
+
+    @Override
     public void use(Player player) {
         player.increaseHealth(healing);
     }
+
+
+    @Override
+    public void pickUp(Player player) {
+        player.addItemToInventory(this);
+    }
+
 
 }
