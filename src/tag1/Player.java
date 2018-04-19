@@ -18,18 +18,19 @@ public class Player {
     private int armor;
     private static final int BASE_ARMOR = 0;
     ArrayList<Item> backpack = new ArrayList();
-
     public Player(String name, Room location) {
         this.name = name;
         this.location = location;
         damage = BASE_DAMAGE;
         health = BASE_HEALTH;
         armor = BASE_ARMOR;
-        // equip[0] = null; i tilfælde af at default værdien i et array ikke er null
     }
 
-    public void use(int slot) {
-        
+    public boolean use(int slot) {
+        if (backpack.get(slot) == null) return false; 
+        backpack.get(slot).use(this);
+        backpack.set(slot, null);
+        return true;
     }
     
     public boolean goNorth() {

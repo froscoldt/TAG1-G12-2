@@ -24,7 +24,7 @@ public class inventoryCountTest {
     public void OneItemInInventoryTest() {
         //arrange
         Player player = new Player("", null);
-        Item item = new Weapon("sword", 10);
+        Item item = new Weapon("sword","desc", 10);
 
         //act
         item.pickUp(player);
@@ -38,9 +38,9 @@ public class inventoryCountTest {
     public void multipleItemInInventoryTest() {
         //arrange
         Player player = new Player("", null);
-        Item item = new Weapon("sword", 10);
-        Item item1 = new Weapon("dagger", 5);
-        Item item2 = new Weapon("shortsword", 7);
+        Item item = new Weapon("sword","desc", 10);
+        Item item1 = new Weapon("dagger","desc", 5);
+        Item item2 = new Weapon("shortsword","desc", 7);
 
         //act
         item.pickUp(player);

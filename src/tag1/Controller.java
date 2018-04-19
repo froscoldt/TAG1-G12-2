@@ -86,12 +86,12 @@ public class Controller {
                 break;
             }
             case checkInventory: {
-                tui.printList(player.getBackpack());
+                tui.displayInventory(player.getBackpack());
                 break;
             }
             case use: {
-                
-                
+                player.use(0);
+                // på en måde skal vi kunne få spilleren til at vælge en item fra inventory arrayet i player klassen.
                 break;
             }
             default:

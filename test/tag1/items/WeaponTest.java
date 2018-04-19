@@ -17,7 +17,7 @@ public class WeaponTest {
     public void testUseWeapon() {
         //arrange
         Player player = new Player("", null);
-        Item item = new Weapon("", 10);
+        Item item = new Weapon("name","desc", 10);
         int expectedDamageRes = 15;
 
         //act

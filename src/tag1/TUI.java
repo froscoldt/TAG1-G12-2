@@ -56,13 +56,6 @@ public class TUI {
     
     }
     
-    public void printList(ArrayList list) {
-        for (Object object : list) {
-            System.out.println(object.toString());
-        }
-    
-    }
-    
     public void validRoomChange(Boolean bool) {
         if (bool == true) {
             System.out.println("You entered the room succesfully");
@@ -71,7 +64,11 @@ public class TUI {
         }
     }
     
-    
+    public void displayInventory(ArrayList array) {
+        for (Object object : array) {
+            System.out.println(object.toString());
+        }
+    }
     public void noItemInRoom() {
         System.out.println("You see no items in the room.");
     }
