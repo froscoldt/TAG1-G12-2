@@ -14,7 +14,7 @@ public class Dungeon {
 Item[] items = new Item[3];
 
     public Room createMaze() {
-        Item item = new Weapon("sword","An item",10);
+        Item item = new Weapon("broken sword","An item",10);
         Item item1 = new Weapon("dagger","An item",5);
         Item item2 = new Potion("sword","An item",10);
         Item item3 = new Weapon("sword","An item",10);
