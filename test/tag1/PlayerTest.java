@@ -38,11 +38,12 @@ public class PlayerTest {
     }
 
     @Test
-    public void testControllerForMove() {
+    public void testIfPlayerCanMove() {
         Player p = new Player("", start);
-        Controller c = new Controller();
-        c.awaitingAnswer(p);
-        assertEquals("South", p.getLocation().getDesc());
+        boolean goSouth = p.goSouth();
+        boolean goWest = p.goWest();
+        assertTrue(goSouth);
+        assertFalse(goWest);
     }
 
 }
