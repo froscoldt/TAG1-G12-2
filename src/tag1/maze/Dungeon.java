@@ -28,10 +28,10 @@ Item[] items = new Item[3];
         Item item11 = new Potion("Potion of life","This yellow potion, heals you up from the death",100);
         Item item12 = new Weapon("Sharp dagger","This light fellor is so painful, that you cant even imagine",25);
         Item item13 = new Armor("Boots of steel","Boots of steel was forged in the the mines of Taloor, by the underground elven people",25);
-        Item item14 = new Potion("Green potion","Do not drink",-10);
+        Item item14 = new Potion("Green potion","The green color feels uncomfortable",-10);
         Item item15 = new Weapon("Legendary Sword","A sword with unbelieveable power and damage",40);
         Item item16 = new Armor("Leggins of steel","The Leggins of steel was forged in the the mines of Taloor, by the underground elven people",35);
-        Item item17 = new Potion("Red Potion","Heals you for 50% of your current health",50);
+        Item item17 = new Potion("Red Potion","Is it blood?",50);
         Item item18 = new Armor("Helmet of steel","Helmet of steel was forged in the the mines of Taloor, by the underground elven people",25);
         Item item19 = new Weapon("Icy Dagger","Forged in the deathlands in the north",30);
 

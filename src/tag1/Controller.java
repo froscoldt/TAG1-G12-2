@@ -99,16 +99,15 @@ public class Controller {
                         player.backpack.get(i).use(player);
                         tui.usedItem(player.backpack.get(i));
                         player.backpack.remove(i);
-                    } else {
-                        tui.noItem();
+                        return;
                     }
-                     
                 }
+                tui.noItem();
                 
                 break;
             }
             case checkStats: {
-                tui.playerStats("metode i player som returnerer damage health og armor");
+                tui.playerStats(player.playerStats());
                 break;
             }
             default:

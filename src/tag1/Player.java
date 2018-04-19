@@ -18,6 +18,7 @@ public class Player {
     private int armor;
     private static final int BASE_ARMOR = 0;
     ArrayList<Item> backpack = new ArrayList();
+
     public Player(String name, Room location) {
         this.name = name;
         this.location = location;
@@ -27,12 +28,14 @@ public class Player {
     }
 
     public boolean use(int slot) {
-        if (backpack.get(slot) == null) return false; 
+        if (backpack.get(slot) == null) {
+            return false;
+        }
         backpack.get(slot).use(this);
         backpack.set(slot, null);
         return true;
     }
-    
+
     public boolean goNorth() {
         if (location.getNorth() == null) {
             return false;
@@ -107,6 +110,11 @@ public class Player {
 
     public void addItemToInventory(Item item) {
         backpack.add(item);
+    }
+
+    public String playerStats() {
+        return "Damage: " + damage + " Health: " + health + " Armor: " + armor;
+
     }
 
 }
