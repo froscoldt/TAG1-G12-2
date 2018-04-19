@@ -15,6 +15,13 @@ public class Item {
         return description;
     }
 
+    @Override
+    public String toString() {
+        return "Item: " + name + " - Desc: " + description;
+    }
+    
+    
+
     public void use(Player player) {}
     public void pickUp(Player player) {}
     public void dropItem() {}
