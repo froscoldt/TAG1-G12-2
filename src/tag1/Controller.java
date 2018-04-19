@@ -91,7 +91,7 @@ public class Controller {
                 break;
             }
             case checkStats: {
-                tui.playerStats(player.playerStats());
+                tui.printString(player.playerStats());
                 break;
             }
             default:

@@ -29,7 +29,6 @@ public class Item {
 
     public void use(Player player) {}
     public void pickUp(Player player) {}
-    public void dropItem() {}
    
 
 }

@@ -74,10 +74,7 @@ public class TUI {
         System.out.println("You dont have that item");
     }
 
-    public void playerStats(String str) {
-        System.out.println(str);
-        // tager og printer en metode i player som giver health, damage og armor.
-    }
+
 
     public int checkUse(String str) {
         String use;

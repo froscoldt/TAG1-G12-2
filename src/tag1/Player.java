@@ -80,28 +80,12 @@ public class Player {
         return backpack;
     }
 
-    public void setHealth(int health) {
-        this.health = health;
-    }
-
     public void increaseHealth(int health) {
         this.health += health;
     }
 
-    public int getDamage() {
-        return damage;
-    }
-
-    public void setDamage(int damage) {
-        this.damage = damage;
-    }
-
     public void increaseDamage(int damage) {
         this.damage += damage;
-    }
-
-    public void decreaseDamage(int damage) {
-        this.damage -= damage;
     }
 
     public void increaseArmor(int armor) {
