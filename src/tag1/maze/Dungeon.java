@@ -14,26 +14,26 @@ public class Dungeon {
 Item[] items = new Item[3];
 
     public Room createMaze() {
-        Item item = new Weapon("broken sword","An item",10);
-        Item item1 = new Weapon("dagger","An item",5);
-        Item item2 = new Potion("sword","An item",10);
-        Item item3 = new Weapon("sword","An item",10);
-        Item item4 = new Weapon("sword","An item",10);
-        Item item5 = new Weapon("sword","An item",10);
-        Item item6 = new Weapon("sword","An item",10);
-        Item item7 = new Weapon("sword","An item",10);
-        Item item8 = new Weapon("spear","An item",10);
-        Item item9 = new Weapon("sword","An item",10);
-        Item item10 = new Weapon("sword","An item",10);
-        Item item11 = new Weapon("sword","An item",10);
-        Item item12 = new Weapon("sword","An item",10);
-        Item item13 = new Weapon("sword","An item",10);
-        Item item14 = new Weapon("sword","An item",10);
-        Item item15 = new Weapon("sword","An item",10);
-        Item item16 = new Weapon("sword","An item",10);
-        Item item17 = new Weapon("sword","An item",10);
-        Item item18 = new Weapon("sword","An item",10);
-        Item item19 = new Weapon("sword","An item",10);
+        Item item = new Weapon("Dwarf forged dagger","This item was forged in the dark mines of Milenia",5);
+        Item item1 = new Weapon("Elven forged dagger","This items was forged in woods of Taloor",5);
+        Item item2 = new Potion("Pony milk health potion","Healthy milk with alot of vitamins",20);
+        Item item3 = new Armor("Leather Leggins","Tailored in the slums of Valoor",15);
+        Item item4 = new Armor("Leather Helmet","Tailored in the slums of Valoor",10);
+        Item item5 = new Weapon("Sword of fire","This sword was forged in the fires of Milenia",10);
+        Item item6 = new Armor("Wooden Shield","A lightweight shield, forged by the water golems at the lake of the green woods",15);
+        Item item7 = new Potion("Water","Forfreshing water",0);
+        Item item8 = new Weapon("Elven Bow","Forged in the woods of Taloor",20);
+        Item item9 = new Armor("Dark Breastplate","This breastplate was destroyed and reforged by the dark dwarfs, in the darkmines",25);
+        Item item10 = new Weapon("Bow of the elder winds","Forged by the people of the winds, this bow is not just powerful, but also really handy to carry",35);
+        Item item11 = new Potion("Potion of life","This yellow potion, heals you up from the death",100);
+        Item item12 = new Weapon("Sharp dagger","This light fellor is so painful, that you cant even imagine",25);
+        Item item13 = new Armor("Boots of steel","Boots of steel was forged in the the mines of Taloor, by the underground elven people",25);
+        Item item14 = new Potion("Green potion","Do not drink",-10);
+        Item item15 = new Weapon("Legendary Sword","A sword with unbelieveable power and damage",40);
+        Item item16 = new Armor("Leggins of steel","The Leggins of steel was forged in the the mines of Taloor, by the underground elven people",35);
+        Item item17 = new Potion("Red Potion","Heals you for 50% of your current health",50);
+        Item item18 = new Armor("Helmet of steel","Helmet of steel was forged in the the mines of Taloor, by the underground elven people",25);
+        Item item19 = new Weapon("Icy Dagger","Forged in the deathlands in the north",30);
 
 
         Room room1 = new Room("room1", laf.getRandomDesc(), item1);
