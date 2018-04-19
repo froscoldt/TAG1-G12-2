@@ -17,8 +17,23 @@ public class Controller {
             awaitingAnswer(p);
         }
     }
-    
 
+    /*
+    public void awaitingAnswer2() {
+        - ask for player input
+        tui.askForMove();
+        save the above input to a string. 
+        place that string into something that can use it.
+    
+        run the input through cases / match strings in an array.
+        depending on the match, do something. 
+        if none matches, return String "invalid input"
+    
+    
+    }
+    
+    
+     */
     public void awaitingAnswer(Player player) {
         ActionConverter ac = new ActionConverter();
         Action action;
@@ -28,47 +43,60 @@ public class Controller {
         while (action == null) {
             if (asking.equalsIgnoreCase("help")) {
                 tui.help();
+                return;
             }
             if (asking.equalsIgnoreCase("quit")) {
-                tui.quit();
+                tui.quittingGame();
                 System.exit(0);
             }
 
-            tui.error();
+            tui.inputError();
             asking = tui.askForMove();
             action = ac.convert(asking);
         }
 
-        Room location = player.getLocation();
-        Room newLocation = null;
-
         switch (action) {
             case GoNorth: {
-                newLocation = location.getNorth();
+                tui.validRoomChange(player.goNorth());
+                tui.printString(player.getLocation().getDesc());
                 break;
             }
             case GoSouth: {
-                newLocation = location.getSouth();
+                tui.validRoomChange(player.goSouth());
+                tui.printString(player.getLocation().getDesc());
                 break;
             }
             case GoEast: {
-                newLocation = location.getEast();
+                tui.validRoomChange(player.goEast());
+                tui.printString(player.getLocation().getDesc());
                 break;
             }
             case GoWest: {
-                newLocation = location.getWest();
+                tui.validRoomChange(player.goWest());
+                tui.printString(player.getLocation().getDesc());
+                break;
+            }
+            case pickUp: {
+                if (player.getLocation().getRoomItem() == null) {
+                    tui.noItemInRoom();
+                    break;
+                }
+                player.addItemToInventory(player.getLocation().getRoomItem());
+                player.getLocation().setRoomItem(null);
+                break;
+            }
+            case checkInventory: {
+                tui.printList(player.getBackpack());
+                break;
+            }
+            case use: {
+                
+                
                 break;
             }
             default:
                 break;
 
-        }
-
-        if (newLocation == null) {
-            tui.noDirection();
-        } else {
-            player.setLocation(newLocation);
-            tui.printString(player.getLocation().getDesc());
         }
 
     }

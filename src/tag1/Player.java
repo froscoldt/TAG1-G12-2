@@ -17,8 +17,7 @@ public class Player {
 
     private int armor;
     private static final int BASE_ARMOR = 0;
-    ArrayList backpack = new ArrayList();
-    Item[] equip = new Item[1];
+    ArrayList<Item> backpack = new ArrayList();
 
     public Player(String name, Room location) {
         this.name = name;
@@ -29,12 +28,52 @@ public class Player {
         // equip[0] = null; i tilfælde af at default værdien i et array ikke er null
     }
 
+    public void use(int slot) {
+        
+    }
+    
+    public boolean goNorth() {
+        if (location.getNorth() == null) {
+            return false;
+        }
+        location = location.getNorth();
+        getLocation().getDesc();
+        return true;
+    }
+
+    public boolean goEast() {
+        if (location.getEast() == null) {
+            return false;
+        }
+        location = location.getEast();
+        getLocation().getDesc();
+        return true;
+    }
+
+    public boolean goSouth() {
+        if (location.getSouth() == null) {
+            return false;
+        }
+        location = location.getSouth();
+        getLocation().getDesc();
+        return true;
+    }
+
+    public boolean goWest() {
+        if (location.getWest() == null) {
+            return false;
+        }
+        location = location.getWest();
+        getLocation().getDesc();
+        return true;
+    }
+
     public Room getLocation() {
         return location;
     }
 
-    public void setLocation(Room location) {
-        this.location = location;
+    public ArrayList<Item> getBackpack() {
+        return backpack;
     }
 
     public void setHealth(int health) {
@@ -69,21 +108,4 @@ public class Player {
         backpack.add(item);
     }
 
-    public void equipWeapon(Item item) {
-        /*  
-        
-        "if no weapon is equipped
-        if (equip[0] == null){
-            equip[0] = item;
-        }
-        else {
-        "if a weapon is equipped, replace it with this one"
-            equip[0] = item;
-            "and some code to remove the damage the weapon added to the player."
-        }
-            
-        
-        
-         */
-    }
 }

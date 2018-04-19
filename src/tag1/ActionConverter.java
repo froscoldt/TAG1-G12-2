@@ -12,11 +12,16 @@ public class ActionConverter {
             return Action.GoEast;
         } else if (str.equalsIgnoreCase("go west")) {
             return Action.GoWest;
-        } else if (str.equalsIgnoreCase("pick up")) {
+        } else if (str.equalsIgnoreCase("pick up item")) {
             return Action.pickUp;
+        } else if (str.equalsIgnoreCase("check inventory")) {
+            return Action.checkInventory;
+        } else if (str.equalsIgnoreCase("check inventory")) {
+            return Action.use;
         } else {
             return null;
         }
+        
         
     }
 

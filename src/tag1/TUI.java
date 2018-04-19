@@ -5,16 +5,20 @@
  */
 package tag1;
 
+import java.util.ArrayList;
 import java.util.Scanner;
+import tag2.items.Item;
 
 /**
  *
  * @author Mark
  */
 public class TUI {
-    String[] help = {"1. go north", "2. go south", "3. go east", "4. go west", "5. help", "6. quit"};
     Scanner sc = new Scanner(System.in);
-
+    String[] commands = {"go north","go south","go east","go west","help","pick up item","check inventory"};
+    
+    
+    
     public String askForMove() {
         String input = sc.nextLine();
         return input;
@@ -30,23 +34,20 @@ public class TUI {
     }
     
     // all the command results, like the one below.
-    public void error() {
+    public void inputError() {
         System.out.println("Error: Wrong input. Type \"help\" in "
                 + "order to view possible commands");
     }
-    public void noDirection() {
-        System.out.println("No opening in that direction.");
-    }
     public void help() {
-        for (String string : help) {
+        for (String string : commands) {
             System.out.println(string);
         }
     }
-    public void quit() {
+    public void quittingGame() {
         System.out.println("you quitter!");
     }
     
-    public void winner() {
+    public void winningGame() {
         System.out.println("You found the exit. You won!");
     }
     
@@ -55,6 +56,24 @@ public class TUI {
     
     }
     
+    public void printList(ArrayList list) {
+        for (Object object : list) {
+            System.out.println(object.toString());
+        }
     
+    }
+    
+    public void validRoomChange(Boolean bool) {
+        if (bool == true) {
+            System.out.println("You entered the room succesfully");
+        } else {
+            System.out.println("There is no doorway in that direction.");
+        }
+    }
+    
+    
+    public void noItemInRoom() {
+        System.out.println("You see no items in the room.");
+    }
     
 }

@@ -12,11 +12,11 @@ import tag1.Player;
  * @author Mark
  */
 public class Armor extends Item {
-    
+
     private int armor;
 
-    public Armor(String name, int armor) {
-        super(name);
+    public Armor(String name, String description, int armor) {
+        super(name, description);
         this.armor = armor;
 
     }
@@ -25,8 +25,4 @@ public class Armor extends Item {
         player.increaseArmor(armor);
     }
 
-    
-    
-    
-    
 }

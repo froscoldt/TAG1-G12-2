@@ -6,11 +6,11 @@ public class Weapon extends Item {
 
     private int damage;
 
-    public Weapon(String name, int damage) {
-        super(name);
+    public Weapon(String name, String description, int damage) {
+        super(name, description);
         this.damage = damage;
-
     }
+
 
     @Override
     public void use(Player player) {

@@ -9,20 +9,16 @@ public class Dungeon {
 
     LookAndFeel laf = new LookAndFeel();
   
-    Item[] item = new Item[3];
-//    Item item = null;
-//    item[0] = Item itemnew Potion("",5);
-//            
-//    
+Item[] items = new Item[3];
 
     public Room createMaze() {
-        Item item = new Weapon("sword",10);
+        Item item = new Weapon("sword","An item",10);
         
-        Room room1 = new Room("room1", laf.getRandomDesc(), item);
+        Room room1 = new Room("room1", laf.getRandomDesc(), null);
         Room room2 = new Room("room2", laf.getRandomDesc(), null);
         Room room3 = new Room("room3", laf.getRandomDesc(), null);
         Room room4 = new Room("room4", laf.getRandomDesc(), null);
-        Room startRoom = new Room("room5", laf.getDESC_0(), null);
+        Room startRoom = new Room("room5", laf.getDESC_0(), item);
         Room room6 = new Room("room6", laf.getRandomDesc(), null);
         Room room7 = new Room("room7", laf.getRandomDesc(), null);
         Room room8 = new Room("room8", laf.getRandomDesc(), null);
