@@ -2,6 +2,7 @@ package tag1;
 
 import tag1.maze.Dungeon;
 import tag1.maze.Room;
+import tag2.items.Item;
 
 public class Controller {
 
@@ -91,8 +92,19 @@ public class Controller {
                 break;
             }
             case use: {
-                player.use(0);
-                // på en måde skal vi kunne få spilleren til at vælge en item fra inventory arrayet i player klassen.
+                String itemName = asking.split(" ",2)[1];
+                
+                for (int i = 0; i < player.getBackpack().size(); i++) {
+                    if (player.backpack.get(i).getName().equalsIgnoreCase(itemName)) {
+                        player.backpack.get(i).use(player);
+                        tui.usedItem(player.backpack.get(i));
+                        player.backpack.remove(i);
+                    } else {
+                        tui.noItem();
+                    }
+                     
+                }
+                
                 break;
             }
             case checkStats: {

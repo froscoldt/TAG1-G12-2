@@ -22,7 +22,6 @@ public class TUI {
 
     public String askForMove() {
         String input = sc.nextLine();
-        checkUse(input);
         return input;
     }
 
@@ -58,13 +57,21 @@ public class TUI {
         System.out.println(str);
 
     }
-
+    
     public void noItemInRoom() {
         System.out.println("You see no items in the room.");
     }
 
     public void pickUpItem(Item item) {
         System.out.println("You picked up " + item.toString() + "!");
+    }
+
+    public void usedItem(Item item) {
+        System.out.println("You used " + item.getName() + "!");
+    }
+    
+    public void noItem() {
+        System.out.println("You dont have that item");
     }
 
     public void playerStats(String str) {
