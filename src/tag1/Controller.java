@@ -82,6 +82,7 @@ public class Controller {
                     break;
                 }
                 player.addItemToInventory(player.getLocation().getRoomItem());
+                tui.pickUpItem(player.getLocation().getRoomItem());
                 player.getLocation().setRoomItem(null);
                 break;
             }
@@ -92,6 +93,10 @@ public class Controller {
             case use: {
                 player.use(0);
                 // på en måde skal vi kunne få spilleren til at vælge en item fra inventory arrayet i player klassen.
+                break;
+            }
+            case checkStats: {
+                tui.playerStats("metode i player som returnerer damage health og armor");
                 break;
             }
             default:

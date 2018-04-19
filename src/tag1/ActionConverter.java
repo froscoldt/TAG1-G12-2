@@ -16,8 +16,10 @@ public class ActionConverter {
             return Action.pickUp;
         } else if (str.equalsIgnoreCase("check inventory")) {
             return Action.checkInventory;
-        } else if (str.equalsIgnoreCase("check inventory")) {
+        } else if (str.equalsIgnoreCase("use")) {
             return Action.use;
+        } else if (str.equalsIgnoreCase("check stats")) {
+            return Action.checkStats;
         } else {
             return null;
         }
