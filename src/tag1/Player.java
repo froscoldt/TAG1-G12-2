@@ -101,4 +101,8 @@ public class Player {
 
     }
 
+    public int getDamage() {
+        return damage;
+    }
+
 }

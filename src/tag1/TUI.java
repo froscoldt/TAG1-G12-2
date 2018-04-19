@@ -18,7 +18,7 @@ public class TUI {
     Scanner sc = new Scanner(System.in);
     String[] commands = {"1. go north", "2. go south", "3. go east",
         "4. go west", "5. help", "6. pick up item", "7. check inventory",
-        "8. check stats", "9. use <currently not functioning>"};
+        "8. check stats", "9. use <item name>"};
 
     public String askForMove() {
         String input = sc.nextLine();
