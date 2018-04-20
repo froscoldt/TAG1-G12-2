@@ -1,6 +1,6 @@
-package tag2.items;
+package Items;
 
-import tag1.Player;
+import Maingame.Player;
 
 public class Armor extends Item {
 

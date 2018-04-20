@@ -1,10 +1,9 @@
-
-package tag1;
+package Maingame;
 
 import java.util.Random;
 
 public class LookAndFeel {
-    
+
     Random random = new Random();
     private final String DESC_0 = "You got no idea how you got here, there seems only to be one entrance - to the south.";
     private final String DESC_1 = "A dim bluish light suffuses this chamber, its source obvious at a glance.\nBlue-glowing lichen and violet-glowing moss cling to the ceiling and spread across the floor";
@@ -40,20 +39,21 @@ public class LookAndFeel {
     public String getDESC_25() {
         return DESC_25;
     }
-    
-    private String[] descriptions = {DESC_1,DESC_2,DESC_3,DESC_4,DESC_5,
-                                     DESC_6,DESC_7,DESC_8,DESC_9,DESC_10,
-                                     DESC_11,DESC_12,DESC_13,DESC_14,DESC_15,
-                                     DESC_16,DESC_17,DESC_18,DESC_19,DESC_20,
-                                     DESC_21,DESC_22,DESC_23,DESC_24};
+
+    private String[] descriptions = {
+        DESC_1, DESC_2, DESC_3, DESC_4, DESC_5,
+        DESC_6, DESC_7, DESC_8, DESC_9, DESC_10,
+        DESC_11, DESC_12, DESC_13, DESC_14, DESC_15,
+        DESC_16, DESC_17, DESC_18, DESC_19, DESC_20,
+        DESC_21, DESC_22, DESC_23, DESC_24};
 
     public String[] getDescriptions() {
         return descriptions;
     }
-    
+
     public String getRandomDesc() {
         return descriptions[random.nextInt(24)];
-        
+
     }
-    
+
 }

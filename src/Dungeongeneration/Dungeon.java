@@ -1,11 +1,11 @@
-package tag1.maze;
+package Dungeongeneration;
 
 import java.util.Random;
-import tag1.LookAndFeel;
-import tag2.items.Item;
-import tag2.items.Potion;
-import tag2.items.Weapon;
-import tag2.items.Armor;
+import Maingame.LookAndFeel;
+import Items.Item;
+import Items.Potion;
+import Items.Weapon;
+import Items.Armor;
 
 public class Dungeon {
 

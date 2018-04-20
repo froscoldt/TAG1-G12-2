@@ -5,6 +5,7 @@
  */
 package tag1.maze;
 
+import Dungeongeneration.Room;
 import org.junit.Test;
 import static org.junit.Assert.*;
 

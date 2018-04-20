@@ -1,8 +1,8 @@
-package tag1;
+package Maingame;
 
 import java.util.ArrayList;
-import tag1.maze.Room;
-import tag2.items.Item;
+import Dungeongeneration.Room;
+import Items.Item;
 
 public class Player {
 

@@ -3,11 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package tag1;
+package Maingame;
 
 import java.util.ArrayList;
 import java.util.Scanner;
-import tag2.items.Item;
+import Items.Item;
 
 /**
  *
@@ -21,6 +21,7 @@ public class TUI {
         "8. check stats", "9. use <item name>"};
 
     public String askForMove() {
+        System.out.println();
         String input = sc.nextLine();
         return input;
     }
@@ -88,8 +89,8 @@ public class TUI {
     }
 
     
-    // 
-    public void validRoomChange(Boolean bool) {
+     
+    public void roomChange(Boolean bool) {
         if (bool == true) {
             System.out.println("You entered the room succesfully");
         } else {

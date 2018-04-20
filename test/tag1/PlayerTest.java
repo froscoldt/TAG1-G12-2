@@ -5,13 +5,14 @@
  */
 package tag1;
 
+import Maingame.Player;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
-import tag1.maze.Room;
+import Dungeongeneration.Room;
 
 /**
  *

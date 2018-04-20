@@ -1,4 +1,4 @@
-package tag1.items;
+package tag2.items;
 
 import org.junit.After;
 import org.junit.AfterClass;
@@ -6,10 +6,10 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
-import tag1.Player;
-import tag1.maze.Room;
-import tag2.items.Item;
-import tag2.items.Weapon;
+import Maingame.Player;
+import Dungeongeneration.Room;
+import Items.Item;
+import Items.Weapon;
 
 public class WeaponTest {
 

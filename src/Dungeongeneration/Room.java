@@ -1,7 +1,7 @@
 
-package tag1.maze;
+package Dungeongeneration;
 
-import tag2.items.Item;
+import Items.Item;
 
 public class Room {
     

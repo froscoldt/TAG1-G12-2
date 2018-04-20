@@ -1,8 +1,7 @@
-package tag1;
+package Maingame;
 
-import tag1.maze.Dungeon;
-import tag1.maze.Room;
-
+import Dungeongeneration.Dungeon;
+import Dungeongeneration.Room;
 
 public class Controller {
 
@@ -22,45 +21,62 @@ public class Controller {
     public void awaitingAnswer(Player player) {
         ActionConverter ac = new ActionConverter();
         Action action;
-        String asking = tui.askForMove();
-        action = ac.convert(asking);
-
+        String askingPlayer = tui.askForMove();
+        action = ac.whatAction(askingPlayer);
+        
         while (action == null) {
-            if (asking.equalsIgnoreCase("help")) {
+            if (askingPlayer.equalsIgnoreCase("help")) {
                 tui.help();
                 return;
             }
-            if (asking.equalsIgnoreCase("quit")) {
+            if (askingPlayer.equalsIgnoreCase("quit")) {
                 tui.quittingGame();
                 System.exit(0);
             }
 
             tui.inputError();
-            asking = tui.askForMove();
-            action = ac.convert(asking);
+            askingPlayer = tui.askForMove();
+            action = ac.whatAction(askingPlayer);
+        }
+        
+        checkPlayerAction(player, action, askingPlayer);
+        if (ac.convert(askingPlayer) == null) {
+            checkPlayerIfMove(player, action, askingPlayer);
         }
 
+    }
+
+    public void checkPlayerIfMove(Player player, Action action, String asking) {
+
         switch (action) {
+
             case GoNorth: {
-                tui.validRoomChange(player.goNorth());
+                tui.roomChange(player.goNorth());
                 tui.printString(player.getLocation().getDesc());
                 break;
             }
             case GoSouth: {
-                tui.validRoomChange(player.goSouth());
+                tui.roomChange(player.goSouth());
                 tui.printString(player.getLocation().getDesc());
                 break;
             }
             case GoEast: {
-                tui.validRoomChange(player.goEast());
+                tui.roomChange(player.goEast());
                 tui.printString(player.getLocation().getDesc());
                 break;
             }
             case GoWest: {
-                tui.validRoomChange(player.goWest());
+                tui.roomChange(player.goWest());
                 tui.printString(player.getLocation().getDesc());
                 break;
             }
+        }
+    }
+
+    public void checkPlayerAction(Player player, Action action, String asking) {
+
+        switch (action) {
+
             case pickUp: {
                 if (player.getLocation().getRoomItem() == null) {
                     tui.noItemInRoom();
@@ -76,8 +92,7 @@ public class Controller {
                 break;
             }
             case use: {
-                String itemName = asking.split(" ",2)[1];
-                
+                String itemName = asking.split(" ", 2)[1];
                 for (int i = 0; i < player.getBackpack().size(); i++) {
                     if (player.backpack.get(i).getName().equalsIgnoreCase(itemName)) {
                         player.backpack.get(i).use(player);
@@ -87,18 +102,16 @@ public class Controller {
                     }
                 }
                 tui.noItem();
-                
+
                 break;
             }
             case checkStats: {
                 tui.printString(player.playerStats());
                 break;
             }
-            default:
+            default: {
                 break;
-
+}
         }
-
     }
-
 }
