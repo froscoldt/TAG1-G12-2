@@ -1,6 +1,6 @@
 package Items;
 
-import Units.Unit;
+import Units.Player;
 
 public class Armor extends Item {
 
@@ -13,12 +13,12 @@ public class Armor extends Item {
     }
 
     @Override
-    public void use(Unit player) {
+    public void use(Player player) {
         player.increaseArmor(armor);
     }
 
     @Override
-    public void pickUp(Unit player) {
+    public void pickUp(Player player) {
         player.addItemToInventory(this);
     }
 

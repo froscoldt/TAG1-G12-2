@@ -2,36 +2,10 @@ package Units;
 
 import Dungeongeneration.Room;
 
-public class Enemy {
-   
-    private String name, description;
-    private int health, damage;
-    
+public abstract class Enemy extends Unit {
 
-    public Enemy(String name, String description, int health, int damage, Room room) {
-        this.name = name;
-        this.description = description;
-        this.health = health;
-    }
+    public Enemy(String name, String description, Room location) {
+        super(name, description, location);
 
-    public void attack() {}
-    public void move() {}
-    
-    
-    
-    public int getHealth() {
-        return health;
     }
-
-    public void setHealth(int health) {
-        this.health = health;
-    }
-
-    public int getDamage() {
-        return damage;
-    }
-    
-    
-    
-    
 }

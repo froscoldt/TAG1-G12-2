@@ -30,7 +30,7 @@ public class LookAndFeel {
     private final String DESC_22 = "A strange ceiling is the focal point of the room before you. \nIt's honeycombed with hundreds of holes about as wide as your head.";
     private final String DESC_23 = "Water rushes down from several holes in the ceiling, and each hole is roughly a foot wide. \nThe water pours in columns that fall through similar holes in the floor, \nflowing down to some unknown depth.";
     private final String DESC_24 = "You find this chamber lit dimly by guttering candles that squat in small hills of melted wax.";
-    private final String DESC_25 = "You seem to have found the exit";
+    private final String DESC_25 = "You feel uneasy...";
 
     public String getDESC_0() {
         return DESC_0;

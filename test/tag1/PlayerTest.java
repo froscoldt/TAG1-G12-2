@@ -13,6 +13,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 import Dungeongeneration.Room;
+import Units.Player;
 
 /**
  *
@@ -33,14 +34,14 @@ public class PlayerTest {
 
     @Test
     public void createPlayer() {
-        Unit p = new Unit("", start);
+        Unit p = new Player("","", start);
         Room currentRoom = p.getLocation();
         assertEquals("Start", start.getDesc());
     }
 
     @Test
     public void testIfPlayerCanMove() {
-        Unit p = new Unit("", start);
+        Unit p = new Player("","", start);
         boolean goSouth = p.goSouth();
         boolean goWest = p.goWest();
         assertTrue(goSouth);

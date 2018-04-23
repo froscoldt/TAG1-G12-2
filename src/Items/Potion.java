@@ -1,6 +1,6 @@
 package Items;
 
-import Units.Unit;
+import Units.Player;
 
 public class Potion extends Item {
 
@@ -13,13 +13,13 @@ public class Potion extends Item {
 
 
     @Override
-    public void use(Unit player) {
+    public void use(Player player) {
         player.increaseHealth(healing);
     }
 
 
     @Override
-    public void pickUp(Unit player) {
+    public void pickUp(Player player) {
         player.addItemToInventory(this);
     }
 

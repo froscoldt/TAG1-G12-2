@@ -2,29 +2,35 @@ package Maingame;
 
 import Units.Unit;
 import Dungeongeneration.Dungeon;
+import Dungeongeneration.EnemyGeneration;
 import Dungeongeneration.Room;
+import Units.Enemy;
+import Units.Player;
+import java.util.ArrayList;
 
 public class Controller {
 
     TUI tui = new TUI();
     Dungeon dun = new Dungeon();
     Room starting = dun.createMaze();
-    Unit p = new Unit("", starting);
+
+    Unit p = new Player("You cant remember your name.", "Its you", starting);
 
     public void go() {
         tui.intro();
         tui.printString(p.getLocation().getDesc());
         while (true) {
-            awaitingAnswer(p);
+            awaitingAnswer((Player) p);
         }
     }
 
-    public void awaitingAnswer(Unit player) {
+    public void awaitingAnswer(Player player) {
+        enemyAction(player, dun.enemies(), player.getLocation());
         ActionConverter ac = new ActionConverter();
         Action action;
         String askingPlayer = tui.askForMove();
         action = ac.whatAction(askingPlayer);
-        
+
         while (action == null) {
             if (askingPlayer.equalsIgnoreCase("help")) {
                 tui.help();
@@ -39,7 +45,7 @@ public class Controller {
             askingPlayer = tui.askForMove();
             action = ac.whatAction(askingPlayer);
         }
-        
+
         checkPlayerAction(player, action, askingPlayer);
         if (ac.convert(askingPlayer) == null) {
             checkPlayerIfMove(player, action, askingPlayer);
@@ -47,7 +53,7 @@ public class Controller {
 
     }
 
-    public void checkPlayerIfMove(Unit player, Action action, String asking) {
+    public void checkPlayerIfMove(Player player, Action action, String asking) {
 
         switch (action) {
 
@@ -74,10 +80,23 @@ public class Controller {
         }
     }
 
-    public void checkPlayerAction(Unit player, Action action, String asking) {
+    public void enemyAction(Player player, ArrayList<Enemy> enemies, Room playerRoom) {
 
+        for (Enemy enemy : enemies) {
+            if (enemy.getLocation() == playerRoom) {
+                System.out.println("An enemy!");
+            }
+            /*
+            while (enemy.getLocation() == playerRoom) {                
+                // attack phase
+            }
+             */
+            enemy.goEast();
+        }
+    }
+
+    public void checkPlayerAction(Player player, Action action, String asking) {
         switch (action) {
-
             case pickUp: {
                 if (player.getLocation().getRoomItem() == null) {
                     tui.noItemInRoom();
@@ -89,7 +108,8 @@ public class Controller {
                 break;
             }
             case checkInventory: {
-                tui.displayInventory(player.getBackpack());
+                tui.displayInventory(dun.enemies());
+                //tui.displayInventory(player.getBackpack());
                 break;
             }
             case use: {
@@ -103,16 +123,15 @@ public class Controller {
                     }
                 }
                 tui.noItem();
-
                 break;
             }
             case checkStats: {
-                tui.printString(player.playerStats());
+                tui.printString(player.stats());
                 break;
             }
             default: {
                 break;
-}
+            }
         }
     }
 }

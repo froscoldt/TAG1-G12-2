@@ -1,6 +1,6 @@
 package Items;
 
-import Units.Unit;
+import Units.Player;
 
 public class Weapon extends Item {
 
@@ -12,13 +12,15 @@ public class Weapon extends Item {
     }
 
 
+
     @Override
-    public void use(Unit player) {
+    public void use(Player player) {
         player.increaseDamage(damage);
+        // overstående println bliver ikke skrevet til output - denne metode bliver ikke brugt?
     }
 
     @Override
-    public void pickUp(Unit player) {
+    public void pickUp(Player player) {
         player.addItemToInventory(this);
     }
 
