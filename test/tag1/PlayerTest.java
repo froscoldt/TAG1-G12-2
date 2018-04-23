@@ -5,7 +5,7 @@
  */
 package tag1;
 
-import Units.Player;
+import Units.Unit;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -33,14 +33,14 @@ public class PlayerTest {
 
     @Test
     public void createPlayer() {
-        Player p = new Player("", start);
+        Unit p = new Unit("", start);
         Room currentRoom = p.getLocation();
         assertEquals("Start", start.getDesc());
     }
 
     @Test
     public void testIfPlayerCanMove() {
-        Player p = new Player("", start);
+        Unit p = new Unit("", start);
         boolean goSouth = p.goSouth();
         boolean goWest = p.goWest();
         assertTrue(goSouth);

@@ -1,6 +1,6 @@
 package Maingame;
 
-import Units.Player;
+import Units.Unit;
 import Dungeongeneration.Dungeon;
 import Dungeongeneration.Room;
 
@@ -9,7 +9,7 @@ public class Controller {
     TUI tui = new TUI();
     Dungeon dun = new Dungeon();
     Room starting = dun.createMaze();
-    Player p = new Player("", starting);
+    Unit p = new Unit("", starting);
 
     public void go() {
         tui.intro();
@@ -19,7 +19,7 @@ public class Controller {
         }
     }
 
-    public void awaitingAnswer(Player player) {
+    public void awaitingAnswer(Unit player) {
         ActionConverter ac = new ActionConverter();
         Action action;
         String askingPlayer = tui.askForMove();
@@ -47,7 +47,7 @@ public class Controller {
 
     }
 
-    public void checkPlayerIfMove(Player player, Action action, String asking) {
+    public void checkPlayerIfMove(Unit player, Action action, String asking) {
 
         switch (action) {
 
@@ -74,7 +74,7 @@ public class Controller {
         }
     }
 
-    public void checkPlayerAction(Player player, Action action, String asking) {
+    public void checkPlayerAction(Unit player, Action action, String asking) {
 
         switch (action) {
 

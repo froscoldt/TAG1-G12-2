@@ -1,6 +1,6 @@
 package Items;
 
-import Units.Player;
+import Units.Unit;
 
 public class Item {
 
@@ -27,8 +27,8 @@ public class Item {
     
     
 
-    public void use(Player player) {}
-    public void pickUp(Player player) {}
+    public void use(Unit player) {}
+    public void pickUp(Unit player) {}
    
 
 }

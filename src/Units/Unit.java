@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import Dungeongeneration.Room;
 import Items.Item;
 
-public class Player {
+public class Unit {
 
     private String name;
     private Room location;
@@ -19,7 +19,7 @@ public class Player {
     private static final int BASE_ARMOR = 0;
     ArrayList<Item> backpack = new ArrayList();
 
-    public Player(String name, Room location) {
+    public Unit(String name, Room location) {
         this.name = name;
         this.location = location;
         damage = BASE_DAMAGE;
@@ -27,8 +27,11 @@ public class Player {
         armor = BASE_ARMOR;
     }
 
-    
-    
+    public String playerStats() {
+        return "Damage: " + damage + " Health: " + health + " Armor: " + armor;
+
+    }
+
     public boolean use(int slot) {
         if (backpack.get(slot) == null) {
             return false;
@@ -36,11 +39,6 @@ public class Player {
         backpack.get(slot).use(this);
         backpack.set(slot, null);
         return true;
-    }
-
-    public String playerStats() {
-        return "Damage: " + damage + " Health: " + health + " Armor: " + armor;
-
     }
 
     public boolean goNorth() {

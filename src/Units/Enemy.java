@@ -1,11 +1,14 @@
 package Units;
+
+import Dungeongeneration.Room;
+
 public class Enemy {
    
     private String name, description;
     private int health, damage;
     
 
-    public Enemy(String name, String description, int health, int damage) {
+    public Enemy(String name, String description, int health, int damage, Room room) {
         this.name = name;
         this.description = description;
         this.health = health;
