@@ -1,4 +1,4 @@
-package Maingame;
+package Units;
 
 import java.util.ArrayList;
 import Dungeongeneration.Room;
@@ -26,7 +26,10 @@ public class Player {
         health = BASE_HEALTH;
         armor = BASE_ARMOR;
     }
-
+    public ArrayList<Item> getBackpack() {
+       
+        return backpack;
+}
     public boolean use(int slot) {
         if (backpack.get(slot) == null) {
             return false;
@@ -76,9 +79,7 @@ public class Player {
         return location;
     }
 
-    public ArrayList<Item> getBackpack() {
-        return backpack;
-    }
+  
 
     public void increaseHealth(int health) {
         this.health += health;

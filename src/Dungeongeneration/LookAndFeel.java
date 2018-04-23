@@ -1,4 +1,4 @@
-package Maingame;
+package Dungeongeneration;
 
 import java.util.Random;
 

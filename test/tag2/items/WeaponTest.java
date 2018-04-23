@@ -6,7 +6,7 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
-import Maingame.Player;
+import Units.Player;
 import Dungeongeneration.Room;
 import Items.Item;
 import Items.Weapon;

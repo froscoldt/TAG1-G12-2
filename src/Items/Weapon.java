@@ -1,6 +1,6 @@
 package Items;
 
-import Maingame.Player;
+import Units.Player;
 
 public class Weapon extends Item {
 

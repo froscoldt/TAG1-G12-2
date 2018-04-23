@@ -1,5 +1,6 @@
 package Maingame;
 
+import Units.Player;
 import Dungeongeneration.Dungeon;
 import Dungeongeneration.Room;
 
@@ -94,10 +95,10 @@ public class Controller {
             case use: {
                 String itemName = asking.split(" ", 2)[1];
                 for (int i = 0; i < player.getBackpack().size(); i++) {
-                    if (player.backpack.get(i).getName().equalsIgnoreCase(itemName)) {
-                        player.backpack.get(i).use(player);
-                        tui.usedItem(player.backpack.get(i));
-                        player.backpack.remove(i);
+                    if (player.getBackpack().get(i).getName().equalsIgnoreCase(itemName)) {
+                        player.getBackpack().get(i).use(player);
+                        tui.usedItem(player.getBackpack().get(i));
+                        player.getBackpack().remove(i);
                         return;
                     }
                 }
