@@ -26,10 +26,9 @@ public class Player {
         health = BASE_HEALTH;
         armor = BASE_ARMOR;
     }
-    public ArrayList<Item> getBackpack() {
-       
-        return backpack;
-}
+
+    
+    
     public boolean use(int slot) {
         if (backpack.get(slot) == null) {
             return false;
@@ -37,6 +36,11 @@ public class Player {
         backpack.get(slot).use(this);
         backpack.set(slot, null);
         return true;
+    }
+
+    public String playerStats() {
+        return "Damage: " + damage + " Health: " + health + " Armor: " + armor;
+
     }
 
     public boolean goNorth() {
@@ -75,11 +79,33 @@ public class Player {
         return true;
     }
 
+    public ArrayList<Item> getBackpack() {
+        return backpack;
+    }
+
+    public void addItemToInventory(Item item) {
+        backpack.add(item);
+    }
+
     public Room getLocation() {
         return location;
     }
 
-  
+    public int getDamage() {
+        return damage;
+    }
+
+    public void setHealth(int health) {
+        this.health = health;
+    }
+
+    public void setDamage(int damage) {
+        this.damage = damage;
+    }
+
+    public void setArmor(int armor) {
+        this.armor = armor;
+    }
 
     public void increaseHealth(int health) {
         this.health += health;
@@ -91,19 +117,6 @@ public class Player {
 
     public void increaseArmor(int armor) {
         this.armor += armor;
-    }
-
-    public void addItemToInventory(Item item) {
-        backpack.add(item);
-    }
-
-    public String playerStats() {
-        return "Damage: " + damage + " Health: " + health + " Armor: " + armor;
-
-    }
-
-    public int getDamage() {
-        return damage;
     }
 
 }
