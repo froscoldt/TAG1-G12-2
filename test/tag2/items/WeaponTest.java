@@ -7,16 +7,16 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 import Units.Unit;
-import Dungeongeneration.Room;
 import Items.Item;
 import Items.Weapon;
+import Units.Player;
 
 public class WeaponTest {
 
     @Test
     public void testUseWeapon() {
         //arrange
-        Unit player = new Unit("", null);
+        Unit player = new Player("","", null);
         Item item = new Weapon("name","desc", 10);
         int expectedDamageRes = 15;
 

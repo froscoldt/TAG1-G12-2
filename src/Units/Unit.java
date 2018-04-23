@@ -2,44 +2,21 @@ package Units;
 
 import java.util.ArrayList;
 import Dungeongeneration.Room;
-import Items.Item;
 
-public class Unit {
 
-    private String name;
+public abstract class Unit {
+
+    private String name, description;
     private Room location;
 
-    private int health;
-    private static final int BASE_HEALTH = 100;
-
-    private int damage;
-    private static final int BASE_DAMAGE = 5;
-
-    private int armor;
-    private static final int BASE_ARMOR = 0;
-    ArrayList<Item> backpack = new ArrayList();
-
-    public Unit(String name, Room location) {
+    public Unit(String name, String description, Room location) {
         this.name = name;
+        this.description = description;
         this.location = location;
-        damage = BASE_DAMAGE;
-        health = BASE_HEALTH;
-        armor = BASE_ARMOR;
+        
     }
 
-    public String playerStats() {
-        return "Damage: " + damage + " Health: " + health + " Armor: " + armor;
-
-    }
-
-    public boolean use(int slot) {
-        if (backpack.get(slot) == null) {
-            return false;
-        }
-        backpack.get(slot).use(this);
-        backpack.set(slot, null);
-        return true;
-    }
+    public abstract String stats();
 
     public boolean goNorth() {
         if (location.getNorth() == null) {
@@ -77,44 +54,24 @@ public class Unit {
         return true;
     }
 
-    public ArrayList<Item> getBackpack() {
-        return backpack;
+    public String getName() {
+        return name;
     }
 
-    public void addItemToInventory(Item item) {
-        backpack.add(item);
-    }
 
     public Room getLocation() {
         return location;
     }
 
-    public int getDamage() {
-        return damage;
-    }
+    public abstract int getDamage();
 
-    public void setHealth(int health) {
-        this.health = health;
-    }
+    public abstract void setHealth(int health);
 
-    public void setDamage(int damage) {
-        this.damage = damage;
-    }
+    public abstract void setDamage(int damage);
 
-    public void setArmor(int armor) {
-        this.armor = armor;
-    }
+    public abstract void increaseHealth(int health);
 
-    public void increaseHealth(int health) {
-        this.health += health;
-    }
+    public abstract void increaseDamage(int damage);
 
-    public void increaseDamage(int damage) {
-        this.damage += damage;
-    }
-
-    public void increaseArmor(int armor) {
-        this.armor += armor;
-    }
 
 }
