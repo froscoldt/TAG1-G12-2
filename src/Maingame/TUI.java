@@ -24,6 +24,7 @@ public class TUI {
     public String askForMove() {
         System.out.println();
         String input = sc.nextLine();
+        System.out.println("--------------------------------------------------------------------");
         return input;
     }
 
@@ -81,11 +82,10 @@ public class TUI {
     }
 
     public String enemyStats(Enemy enemy) {
-        return enemy.getHealth();
-        
+        return String.valueOf(enemy.getHealth());
     }
     public void encounter(Enemy enemy) {
-        System.out.println("You encountered a "+enemy.getName() + " - HP: " +enemyStats(enemy));
+        System.out.println("An enemy stands before you: "+enemy.getName() + " - HP: " +enemyStats(enemy));
     }
 
     public int checkUse(String str) {

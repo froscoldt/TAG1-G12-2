@@ -56,7 +56,12 @@ public class Boss extends Enemy {
     }
 
     @Override
-    public String getHealth() {
+    public int getHealth() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void decreaseHealth(int health) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 

@@ -1,18 +1,15 @@
 package Maingame;
 
-import java.util.ArrayList;
-
 public class ActionConverter {
-    
-    
+
     public Action whatAction(String str) {
-        if (str.contains("go")) {
+        if (str.startsWith("go")) {
             return convertMove(str);
         }
-            
-            return convert(str); 
-    } 
-    
+
+        return convert(str);
+    }
+
     public Action convert(String str) {
 
         if (str.equalsIgnoreCase("pick up item")) {
@@ -23,12 +20,13 @@ public class ActionConverter {
             return Action.use;
         } else if (str.equalsIgnoreCase("check stats")) {
             return Action.checkStats;
+        } else if (str.contains("attack ")) {
+            return Action.attack;
         } else {
             return null;
         }
     }
 
-    
     public Action convertMove(String str) {
 
         if (str.equalsIgnoreCase("go north")) {

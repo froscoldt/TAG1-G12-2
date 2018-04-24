@@ -2,7 +2,7 @@ package Maingame;
 
 import Units.Unit;
 import Dungeongeneration.Dungeon;
-import Dungeongeneration.EnemyGeneration;
+
 import Dungeongeneration.Room;
 import Units.Enemy;
 import Units.Player;
@@ -48,7 +48,7 @@ public class Controller {
             action = ac.whatAction(askingPlayer);
         }
 
-        checkPlayerAction(player, action, askingPlayer);
+        checkPlayerAction(player, action, askingPlayer, dun.enemies());
         if (ac.convert(askingPlayer) == null) {
             checkPlayerIfMove(player, action, askingPlayer);
         }
@@ -87,17 +87,14 @@ public class Controller {
         for (Enemy enemy : enemies) {
             if (enemy.getLocation() == playerRoom) {
                 tui.encounter(enemy);
+                continue;
             }
-            /*
-            while (enemy.getLocation() == playerRoom) {                
-                // attack phase
-            }
-             */
             enemy.move();
+
         }
     }
 
-    public void checkPlayerAction(Player player, Action action, String asking) {
+    public void checkPlayerAction(Player player, Action action, String asking, ArrayList<Enemy> enemylist) {
         switch (action) {
             case pickUp: {
                 if (player.getLocation().getRoomItem() == null) {
@@ -131,6 +128,27 @@ public class Controller {
                 tui.printString(player.stats());
                 break;
             }
+            case attack: {
+                String attackDeclaration = asking.split(" ", 2)[1];
+                for (Enemy enemy : enemylist) {
+                    if (enemy.getLocation() == player.getLocation() && attackDeclaration.equalsIgnoreCase(enemy.getName())) {
+                        enemy.decreaseHealth(player.getDamage());
+                        System.out.println("you dealt " + String.valueOf(player.getDamage()) + " damage to " + enemy.getName());
+                        if (enemy.getHealth() < 0) {
+                            enemylist.remove(enemy);
+                            System.out.println("You killed " + enemy.getName());
+                        }
+                        // tui.display damage
+
+                        return;
+                    }
+                     
+                }
+                // tui.noEnemy();
+                System.out.println("No such enemy");
+                break;
+            }
+
             default: {
                 break;
             }

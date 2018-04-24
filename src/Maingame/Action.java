@@ -10,7 +10,8 @@ public enum Action {
     pickUp,
     checkInventory,
     use,
-    checkStats;
+    checkStats,
+    attack;
     
     
 }

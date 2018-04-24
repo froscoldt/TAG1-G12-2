@@ -10,8 +10,8 @@ public class EnemyGeneration {
     ArrayList<Enemy> listOfEnemies = new ArrayList();
 
     public void generate(ArrayList<Room> room) {
-        for (int i = 0; i < 20; i++) {
-            listOfEnemies.add(new SmallEnemy("RandomZombieName", 
+        for (int i = 0; i < 12; i++) {
+            listOfEnemies.add(new SmallEnemy("RandomEnemyName" + String.valueOf(i), 
                      room.get(random.nextInt(room.size()))));
         }
     }

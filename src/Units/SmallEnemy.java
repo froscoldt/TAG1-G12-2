@@ -4,6 +4,7 @@ import Dungeongeneration.Room;
 import java.util.Random;
 import jdk.internal.org.objectweb.asm.tree.analysis.Value;
 
+
 public class SmallEnemy extends Enemy {
 
     private int health;
@@ -13,7 +14,6 @@ public class SmallEnemy extends Enemy {
     private static final int BASE_DAMAGE = 5;
 
     private Random random = new Random();
-
     private final int addRandomHealth = 0 - random.nextInt(20) - 10;
     // adds health of -10 to 5 
     private final int addRandomDamage = random.nextInt(10) - 5;
@@ -21,6 +21,7 @@ public class SmallEnemy extends Enemy {
 
     public SmallEnemy(String name, Room location) {
         super(name, location);
+        
         damage = BASE_DAMAGE + addRandomDamage;
         health = BASE_HEALTH + addRandomHealth;
     }
@@ -56,10 +57,18 @@ public class SmallEnemy extends Enemy {
         this.damage += damage;
     }
 
+ 
     @Override
-    public String getHealth() {
-        return String.valueOf(health);
+    public int getHealth() {
+        return health;
     }
+
+
+    public void decreaseHealth(int damage) {
+        this.health -= damage;
+    }
+    
+    
 
 
 

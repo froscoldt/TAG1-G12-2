@@ -71,5 +71,8 @@ public abstract class Unit {
 
     public abstract void increaseDamage(int damage);
 
+    public abstract void decreaseHealth(int health);
+
+
 
 }

@@ -94,4 +94,9 @@ public class Player extends Unit {
         this.armor += armor;
     }
 
+    @Override
+    public void decreaseHealth(int health) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
 }
