@@ -53,8 +53,8 @@ public class HighScoreTest {
         h.writeHighScoreToTable(new Highscore(p3));
         h.readHighScoreTable();
         arr = h.getHighScoreTable();
-        assertEquals("Mark", arr.get(0).getPlayer());
-        assertEquals(748, arr.get(1).getHighScore());
+        assertEquals("Mads", arr.get(0).getPlayer());
+        assertEquals(1265, arr.get(1).getHighScore());
         assertEquals("Damjan", arr.get(2).getPlayer());
     }
 
@@ -66,8 +66,8 @@ public class HighScoreTest {
         h.writeHighScoreToTable(new Highscore(p3));
         arr = h.getHighScoreTable();
         h.setHighScoreTable(h.sortHighScore(arr));
-        assertEquals("Damjan", arr.get(0).getPlayer());
-        assertEquals(1689, arr.get(0).getHighScore());
-        assertEquals(1253, arr.get(1).getHighScore());
+        assertEquals("Mark", arr.get(0).getPlayer());
+        assertEquals(1265, arr.get(0).getHighScore());
+        assertEquals(748, arr.get(1).getHighScore());
     }
 }
