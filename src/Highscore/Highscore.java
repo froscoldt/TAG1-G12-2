@@ -1,5 +1,7 @@
 package Highscore;
 
+import Units.Player;
+import Units.Unit;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -19,9 +21,9 @@ public class Highscore {
     public Highscore() {
     }
 
-    public Highscore(String player, int highScore) {
-        this.player = player;
-        this.highScore = highScore;
+    public Highscore(Player p) {
+        this.player = p.getName();
+        this.highScore = p.getScore();
     }    
 
     public int getHighScore() {
@@ -30,10 +32,6 @@ public class Highscore {
 
     public String getPlayer() {
         return player;
-    }
-
-    public void setHighScore(int highScore) {
-        this.highScore += highScore;
     }
 
     public ArrayList<Highscore> getHighScoreTable() {

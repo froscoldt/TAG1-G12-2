@@ -8,8 +8,8 @@ public abstract class Enemy extends Unit {
     private Room location;
     Random random = new Random();
 
-    public Enemy(String name, String description, Room location) {
-        super(name, description, location);
+    public Enemy(String name, Room location) {
+        super(name, location);
         this.location = location;
     }
 

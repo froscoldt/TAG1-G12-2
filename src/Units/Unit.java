@@ -6,12 +6,11 @@ import Dungeongeneration.Room;
 
 public abstract class Unit {
 
-    private String name, description;
+    private String name;
     private Room location;
 
-    public Unit(String name, String description, Room location) {
+    public Unit(String name, Room location) {
         this.name = name;
-        this.description = description;
         this.location = location;
         
     }

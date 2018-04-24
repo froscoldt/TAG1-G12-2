@@ -34,14 +34,14 @@ public class PlayerTest {
 
     @Test
     public void createPlayer() {
-        Unit p = new Player("","", start);
+        Unit p = new Player("", start);
         Room currentRoom = p.getLocation();
         assertEquals("Start", start.getDesc());
     }
 
     @Test
     public void testIfPlayerCanMove() {
-        Unit p = new Player("","", start);
+        Unit p = new Player("", start);
         boolean goSouth = p.goSouth();
         boolean goWest = p.goWest();
         assertTrue(goSouth);

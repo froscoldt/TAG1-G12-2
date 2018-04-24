@@ -18,8 +18,8 @@ public class SmallEnemy extends Enemy {
     private final int addRandomDamage = random.nextInt(10) - 5;
     // adds damage of -5 to 5 
 
-    public SmallEnemy(String name, String description, Room location) {
-        super(name, description, location);
+    public SmallEnemy(String name, Room location) {
+        super(name, location);
         damage = BASE_DAMAGE + addRandomDamage;
         health = BASE_HEALTH + addRandomHealth;
     }

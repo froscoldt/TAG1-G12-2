@@ -14,10 +14,13 @@ public class Controller {
     Dungeon dun = new Dungeon();
     Room starting = dun.createMaze();
 
-    Unit p = new Player("You cant remember your name.", "Its you", starting);
+    Unit p = null;
 
     public void go() {
         tui.intro();
+        tui.askForPlayerName();
+        tui.askForMove();
+        p = new Player(tui.askForMove(), starting);
         tui.printString(p.getLocation().getDesc());
         while (true) {
             awaitingAnswer((Player) p);

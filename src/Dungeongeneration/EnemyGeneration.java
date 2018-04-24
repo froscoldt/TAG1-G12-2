@@ -12,7 +12,7 @@ public class EnemyGeneration {
     public void generate(ArrayList<Room> room) {
         for (int i = 0; i < 10; i++) {
             listOfEnemies.add(new SmallEnemy("RandomZombieName", 
-                    "RandomZombieDescription", room.get(random.nextInt(room.size()))));
+                     room.get(random.nextInt(room.size()))));
         }
     }
 

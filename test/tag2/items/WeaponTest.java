@@ -12,7 +12,7 @@ public class WeaponTest {
     @Test
     public void testUseWeapon() {
         //arrange
-        Unit player = new Player("","", null);
+        Unit player = new Player("", null);
         Item item = new Weapon("name","desc", 10);
         int expectedDamageRes = 15;
 

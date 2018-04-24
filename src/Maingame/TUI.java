@@ -39,6 +39,10 @@ public class TUI {
         System.out.println("Error: Wrong input. Type \"help\" in "
                 + "order to view possible commands");
     }
+    
+    public void askForPlayerName() {
+        System.out.println("Type your name: ");
+    }
 
     public void help() {
         for (String string : commands) {

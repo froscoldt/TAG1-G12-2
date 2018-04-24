@@ -6,9 +6,12 @@
 package tag3;
 
 import Highscore.Highscore;
+import Units.Player;
+import Units.Unit;
 import java.util.ArrayList;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import org.junit.Before;
 
 /**
  *
@@ -18,12 +21,25 @@ public class HighScoreTest {
 
     Highscore h = new Highscore();
     ArrayList<Highscore> arr = new ArrayList();
+    Player p1 = null;
+    Player p2 = null;
+    Player p3 = null;
+
+    @Before
+    public void setup() {
+        p1 = new Player("Mads", null);
+        p2 = new Player("Mark", null);
+        p3 = new Player("Damjan", null);
+        p1.setScore(748);
+        p2.setScore(1265);
+        p3.setScore(492);
+    }
 
     @Test
     public void testSize() {
         h.emptyHighsScoreFile();
-        h.writeHighScoreToTable(new Highscore("Mark", 1253));
-        h.writeHighScoreToTable(new Highscore("Mads", 748));
+        h.writeHighScoreToTable(new Highscore(p1));
+        h.writeHighScoreToTable(new Highscore(p2));
         h.readHighScoreTable();
         arr = h.getHighScoreTable();
         assertEquals(2, arr.size());
@@ -32,9 +48,9 @@ public class HighScoreTest {
     @Test
     public void getHighScore() {
         h.emptyHighsScoreFile();
-        h.writeHighScoreToTable(new Highscore("Mark", 1253));
-        h.writeHighScoreToTable(new Highscore("Mads", 748));
-        h.writeHighScoreToTable(new Highscore("Damjan", 1689));
+        h.writeHighScoreToTable(new Highscore(p1));
+        h.writeHighScoreToTable(new Highscore(p2));
+        h.writeHighScoreToTable(new Highscore(p3));
         h.readHighScoreTable();
         arr = h.getHighScoreTable();
         assertEquals("Mark", arr.get(0).getPlayer());
@@ -45,9 +61,9 @@ public class HighScoreTest {
     @Test
     public void testSorting() {
         h.emptyHighsScoreFile();
-        h.writeHighScoreToTable(new Highscore("Mark", 1253));
-        h.writeHighScoreToTable(new Highscore("Mads", 748));
-        h.writeHighScoreToTable(new Highscore("Damjan", 1689));
+        h.writeHighScoreToTable(new Highscore(p1));
+        h.writeHighScoreToTable(new Highscore(p2));
+        h.writeHighScoreToTable(new Highscore(p3));
         arr = h.getHighScoreTable();
         h.setHighScoreTable(h.sortHighScore(arr));
         assertEquals("Damjan", arr.get(0).getPlayer());

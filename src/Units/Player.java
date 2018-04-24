@@ -7,6 +7,8 @@ import java.util.ArrayList;
 public class Player extends Unit {
 
     ArrayList<Item> backpack = new ArrayList();
+    
+    private int score = 0;
 
     private int health;
     private static final int BASE_HEALTH = 100;
@@ -17,8 +19,8 @@ public class Player extends Unit {
     private int armor;
     private static final int BASE_ARMOR = 0;
 
-    public Player(String name, String description, Room location) {
-        super(name, description, location);
+    public Player(String name, Room location) {
+        super(name, location);
         damage = BASE_DAMAGE;
         health = BASE_HEALTH;
         armor = BASE_ARMOR;
@@ -36,6 +38,14 @@ public class Player extends Unit {
 
     public ArrayList<Item> getBackpack() {
         return backpack;
+    }
+
+    public int getScore() {
+        return score;
+    }
+
+    public void setScore(int score) {
+        this.score += score;
     }
 
     public void addItemToInventory(Item item) {
