@@ -1,9 +1,5 @@
 package tag2.items;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 import Units.Unit;
@@ -21,7 +17,7 @@ public class WeaponTest {
         int expectedDamageRes = 15;
 
         //act
-        item.use(player);
+        item.use((Player) player);
 
         //assert
         assertEquals(expectedDamageRes, player.getDamage());
