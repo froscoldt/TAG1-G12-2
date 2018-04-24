@@ -1,19 +1,28 @@
-package Maingame;
+package Highscore;
 
-import java.io.Serializable;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
+import java.util.Comparator;
 
-public class Highscore implements Serializable {
+public class Highscore {
     
-    private int highScore;
     private String player;
+    private int highScore;
     private ArrayList<Highscore> highScoreTable = new ArrayList();
     private final String HIGHSCOREFILE = "highscore.txt";
+
+    public Highscore() {
+    }
+
+    public Highscore(String player, int highScore) {
+        this.player = player;
+        this.highScore = highScore;
+    }    
 
     public int getHighScore() {
         return highScore;
@@ -27,12 +36,16 @@ public class Highscore implements Serializable {
         this.highScore += highScore;
     }
 
-    public void setPlayer(String player) {
-        this.player = player;
+    public ArrayList<Highscore> getHighScoreTable() {
+        return highScoreTable;
+    }
+
+    public void setHighScoreTable(ArrayList<Highscore> highScoreTable) {
+        this.highScoreTable = highScoreTable;
     }
     
     public void writeHighScoreToTable(Highscore highSco) {
-        this.highScoreTable = readHighScoreTable();
+        readHighScoreTable();
         highScoreTable.add(highSco);
         try {
             ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(HIGHSCOREFILE));
@@ -43,7 +56,7 @@ public class Highscore implements Serializable {
         }
     }
     
-    public ArrayList readHighScoreTable() {
+    public void readHighScoreTable() {
         try {
             ObjectInputStream ois = new ObjectInputStream(new FileInputStream(HIGHSCOREFILE));
             this.highScoreTable = (ArrayList) ois.readObject();
@@ -51,9 +64,21 @@ public class Highscore implements Serializable {
         } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
         }
-        return highScoreTable;
     }
     
-    
-    
+    public void emptyHighsScoreFile() {
+        try {
+            new FileOutputStream(HIGHSCOREFILE).close();
+        } catch (FileNotFoundException ex) {
+            ex.printStackTrace();
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+        
+    }    
+
+    public ArrayList sortHighScore(ArrayList arr) {
+        arr.sort(Comparator.comparing(Highscore::getHighScore).reversed());
+        return arr;
+    }
 }
