@@ -21,38 +21,30 @@ public class Dungeon {
 
     public Room createMaze() {
 
-        listOfItems.add(item1);
-        listOfItems.add(item2);
-        listOfItems.add(item3);
-        listOfItems.add(item4);
-        listOfItems.add(item5);
-        listOfItems.add(item6);
-        listOfItems.add(item7);
-        listOfItems.add(item8);
-        listOfItems.add(item9);
-        listOfItems.add(item10);
-        listOfItems.add(item11);
-        listOfItems.add(item12);
-        listOfItems.add(item13);
-        listOfItems.add(item14);
-        listOfItems.add(item16);
-        listOfItems.add(item17);
-        listOfItems.add(item18);
-        listOfItems.add(item19);
-        
-        
         for (int i = 0; i < 18; i++) {
             int num = random.nextInt(3);
             if (num == 0) {
-                listOfItems.add(new Weapon("" , laf.getRandomItemDesc(),random.nextInt()));
+                String[] weaponInfo = laf.getRandomItemInfo("weapon");
+                listOfItems.add(new Weapon(
+                        weaponInfo[0],
+                        weaponInfo[1],
+                        random.nextInt(10) + 10));
             }
 
             if (num == 1) {
-                listOfItems.add(new Armor("", "", random.nextInt()));
+                String[] armorInfo = laf.getRandomItemInfo("armor");
+                listOfItems.add(new Armor(
+                        armorInfo[0],
+                        armorInfo[1],
+                        random.nextInt(10) + 10));
             }
 
             if (num == 2) {
-                listOfItems.add(new Potion("", "", random.nextInt()));
+                String[] potionInfo = laf.getRandomItemInfo("potion");
+                listOfItems.add(new Potion(
+                        potionInfo[0],
+                        potionInfo[1],
+                        random.nextInt(10) + 10));
             }
 
         }
@@ -63,7 +55,7 @@ public class Dungeon {
             listOfRooms.add(new Room("room" + String.valueOf(i),
                     laf.getRandomRoomDesc(), listOfItems.get(random.nextInt(18))));
         }
-        Room bossRoom = new Room("", laf.getDESC_25(), item15);
+        Room bossRoom = new Room("", laf.getDESC_25(), null);
         listOfRooms.add(bossRoom);
 
         //startroom

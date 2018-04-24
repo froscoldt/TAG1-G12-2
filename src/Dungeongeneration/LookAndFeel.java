@@ -53,19 +53,11 @@ public class LookAndFeel {
     private final String[] DESC_ITEM_ARMOR_5 = {"Leggins of steel", "The Leggins of steel was forged in the the mines of Taloor, by the underground elven people"};
     private final String[] DESC_ITEM_ARMOR_6 = {"Helmet of steel", "Helmet of steel was forged in the the mines of Taloor, by the underground elven people"};
 
-    private final String[] DESC_ITEM_POTION_0 = {};
-    private final String[] DESC_ITEM_POTION_1 = {};
-    private final String[] DESC_ITEM_POTION_2 = {};
-    private final String[] DESC_ITEM_POTION_3 = {};
-    private final String[] DESC_ITEM_POTION_4 = {};
-    private final String[] DESC_ITEM_POTION_5 = {};
-    private final String[] DESC_ITEM_POTION_6 = {};
-
-    Item item2 = new Potion("Pony milk health potion", "Healthy milk with alot of vitamins", 20);
-    Item item7 = new Potion("Water", "Forfreshing water", 0);
-    Item item11 = new Potion("Potion of life", "This yellow potion, heals you up from the death", 100);
-    Item item14 = new Potion("Green potion", "The green color feels uncomfortable", -10);
-    Item item17 = new Potion("Red Potion", "Is it blood?", 50);
+    private final String[] DESC_ITEM_POTION_0 = {"Pony milk health potion", "Healthy milk with alot of vitamins"};
+    private final String[] DESC_ITEM_POTION_1 = {"Water", "Forfreshing water"};
+    private final String[] DESC_ITEM_POTION_2 = {"Potion of life", "This yellow potion, heals you up from the death"};
+    private final String[] DESC_ITEM_POTION_3 = {"Green potion", "The green color feels uncomfortable"};
+    private final String[] DESC_ITEM_POTION_4 = {"Red Potion", "Is it blood?"};
 
     public String getDESC_0() {
         return DESC_ROOM_0;
@@ -95,10 +87,9 @@ public class LookAndFeel {
         DESC_ITEM_ARMOR_6};
 
     private String[] itemPotionInfo [] = {
-        DESC_ITEM_WEAPON_0, DESC_ITEM_WEAPON_1, 
-        DESC_ITEM_WEAPON_2, DESC_ITEM_WEAPON_3, 
-        DESC_ITEM_WEAPON_4, DESC_ITEM_WEAPON_5, 
-        DESC_ITEM_WEAPON_6, DESC_ITEM_WEAPON_7};
+        DESC_ITEM_POTION_0, DESC_ITEM_POTION_1, 
+        DESC_ITEM_POTION_2, DESC_ITEM_POTION_3, 
+        DESC_ITEM_POTION_4};
    
 
     public String[] getRoomDescriptions() {
@@ -113,16 +104,16 @@ public class LookAndFeel {
     
     
     
-    public String[] getRandomItemDesc(Item item) {
-        if (item instanceof Weapon) {
+    public String[] getRandomItemInfo(String item) {
+        if (item.equalsIgnoreCase("weapon")) {
             int num = random.nextInt(itemWeaponInfo.length);
             return itemWeaponInfo[num];
         }
-        if (item instanceof Potion) {
+        if (item.equalsIgnoreCase("potion")) {
             int num = random.nextInt(itemPotionInfo.length);
             return itemPotionInfo[num];
         }
-        if (item instanceof Armor) {
+        if (item.equalsIgnoreCase("armor")) {
             int num = random.nextInt(itemArmorInfo.length);
             return itemArmorInfo[num];
         }
