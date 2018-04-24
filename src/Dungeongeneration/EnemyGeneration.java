@@ -10,11 +10,12 @@ public class EnemyGeneration {
     ArrayList<Enemy> listOfEnemies = new ArrayList();
 
     public void generate(ArrayList<Room> room) {
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 20; i++) {
             listOfEnemies.add(new SmallEnemy("RandomZombieName", 
                      room.get(random.nextInt(room.size()))));
         }
     }
+    
 
     public ArrayList<Enemy> getListOfEnemies() {
         return listOfEnemies;

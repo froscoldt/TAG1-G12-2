@@ -17,10 +17,9 @@ public class Controller {
     Unit p = null;
 
     public void go() {
-        tui.intro();
         tui.askForPlayerName();
-        tui.askForMove();
         p = new Player(tui.askForMove(), starting);
+        tui.intro();
         tui.printString(p.getLocation().getDesc());
         while (true) {
             awaitingAnswer((Player) p);
@@ -87,7 +86,7 @@ public class Controller {
 
         for (Enemy enemy : enemies) {
             if (enemy.getLocation() == playerRoom) {
-                System.out.println("An enemy!");
+                tui.encounter(enemy);
             }
             /*
             while (enemy.getLocation() == playerRoom) {                
@@ -111,8 +110,8 @@ public class Controller {
                 break;
             }
             case checkInventory: {
-                tui.displayInventory(dun.enemies());
-                //tui.displayInventory(player.getBackpack());
+                //tui.displayInventory(dun.enemies());
+                tui.displayInventory(player.getBackpack());
                 break;
             }
             case use: {

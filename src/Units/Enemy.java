@@ -12,7 +12,8 @@ public abstract class Enemy extends Unit {
         super(name, location);
         this.location = location;
     }
-
+    public abstract String getHealth();
+    
     public void move() {
         Room[] directions = {
             location.getEast(),
@@ -24,7 +25,6 @@ public abstract class Enemy extends Unit {
             tryMove = directions[random.nextInt(4)];
         }
         setLocation(tryMove);
-        System.out.println(location.getDesc());
     }
 
     public Room getLocation() {

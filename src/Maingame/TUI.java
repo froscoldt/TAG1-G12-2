@@ -8,6 +8,7 @@ package Maingame;
 import java.util.ArrayList;
 import java.util.Scanner;
 import Items.Item;
+import Units.Enemy;
 
 /**
  *
@@ -79,7 +80,13 @@ public class TUI {
         System.out.println("You dont have that item");
     }
 
-
+    public String enemyStats(Enemy enemy) {
+        return enemy.getHealth();
+        
+    }
+    public void encounter(Enemy enemy) {
+        System.out.println("You encountered a "+enemy.getName() + " - HP: " +enemyStats(enemy));
+    }
 
     public int checkUse(String str) {
         String use;

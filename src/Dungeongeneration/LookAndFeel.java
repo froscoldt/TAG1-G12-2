@@ -40,18 +40,18 @@ public class LookAndFeel {
     private final String[] DESC_ITEM_WEAPON_1 = {"Elven forged dagger", "This items was forged in woods of Taloor"};
     private final String[] DESC_ITEM_WEAPON_2 = {"Sword of fire", "This sword was forged in the fires of Milenia"};
     private final String[] DESC_ITEM_WEAPON_3 = {"Elven Bow", "Forged in the woods of Taloor"};
-    private final String[] DESC_ITEM_WEAPON_4 = {"Bow of the elder winds", "Forged by the people of the winds, this bow is not just powerful, but also really handy to carry"};
+    private final String[] DESC_ITEM_WEAPON_4 = {"Bow of the elder winds", "Forged by the people of the winds,\n this bow is not just powerful, but also really handy to carry"};
     private final String[] DESC_ITEM_WEAPON_5 = {"Sharp dagger", "This light fellor is so painful, that you cant even imagine"};
     private final String[] DESC_ITEM_WEAPON_6 = {"Legendary Sword", "A sword with unbelieveable power and damage"};
     private final String[] DESC_ITEM_WEAPON_7 = {"Icy Dagger", "Forged in the deathlands in the north"};
    
     private final String[] DESC_ITEM_ARMOR_0 = {"Leather Leggins", "Tailored in the slums of Valoor"};
     private final String[] DESC_ITEM_ARMOR_1 = {"Leather Helmet", "Tailored in the slums of Valoor"};
-    private final String[] DESC_ITEM_ARMOR_2 = {"Wooden Shield", "A lightweight shield, forged by the water golems at the lake of the green woods"  };
-    private final String[] DESC_ITEM_ARMOR_3 = {"Dark Breastplate", "This breastplate was destroyed and reforged by the dark dwarfs, in the darkmines"};
-    private final String[] DESC_ITEM_ARMOR_4 = {"Boots of steel", "Boots of steel was forged in the the mines of Taloor, by the underground elven people"};
-    private final String[] DESC_ITEM_ARMOR_5 = {"Leggins of steel", "The Leggins of steel was forged in the the mines of Taloor, by the underground elven people"};
-    private final String[] DESC_ITEM_ARMOR_6 = {"Helmet of steel", "Helmet of steel was forged in the the mines of Taloor, by the underground elven people"};
+    private final String[] DESC_ITEM_ARMOR_2 = {"Wooden Shield", "A lightweight shield, forged by\n the water golems at the lake of the green woods"  };
+    private final String[] DESC_ITEM_ARMOR_3 = {"Dark Breastplate", "This breastplate was destroyed and\n reforged by the dark dwarfs, in the darkmines"};
+    private final String[] DESC_ITEM_ARMOR_4 = {"Boots of steel", "Boots of steel was forged in the the\n mines of Taloor, by the underground elven people"};
+    private final String[] DESC_ITEM_ARMOR_5 = {"Leggins of steel", "The Leggins of steel was forged in\n the the mines of Taloor, by the underground elven people"};
+    private final String[] DESC_ITEM_ARMOR_6 = {"Helmet of steel", "Helmet of steel was forged in the mines of Taloor,\n by the underground elven people"};
 
     private final String[] DESC_ITEM_POTION_0 = {"Pony milk health potion", "Healthy milk with alot of vitamins"};
     private final String[] DESC_ITEM_POTION_1 = {"Water", "Forfreshing water"};
