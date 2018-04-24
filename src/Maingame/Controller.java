@@ -91,7 +91,7 @@ public class Controller {
                 // attack phase
             }
              */
-            enemy.goEast();
+            enemy.move();
         }
     }
 
