@@ -15,6 +15,7 @@ public abstract class Unit {
     }
 
     public abstract String stats();
+    public abstract int getHealth();
 
     public boolean goNorth() {
         if (location.getNorth() == null) {

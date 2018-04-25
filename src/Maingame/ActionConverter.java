@@ -4,14 +4,13 @@ public class ActionConverter {
 
     public Action whatAction(String str) {
         if (str.startsWith("go")) {
-            return convertMove(str);
+            return convertMove(str.toLowerCase());
         }
 
-        return convert(str);
+        return convert(str.toLowerCase());
     }
 
     public Action convert(String str) {
-
         if (str.equalsIgnoreCase("pick up item")) {
             return Action.pickUp;
         } else if (str.equalsIgnoreCase("check inventory")) {
@@ -28,7 +27,6 @@ public class ActionConverter {
     }
 
     public Action convertMove(String str) {
-
         if (str.equalsIgnoreCase("go north")) {
             return Action.GoNorth;
         } else if (str.equalsIgnoreCase("go south")) {

@@ -47,11 +47,12 @@ public class Controller {
             action = ac.whatAction(askingPlayer);
         }
 
-        checkPlayerAction(player, action, askingPlayer, dun.enemies());
+        checkPlayerAction(player, action, askingPlayer, dun.getListOfEnemies());
         if (ac.convert(askingPlayer) == null) {
             checkPlayerIfMove(player, action, askingPlayer);
         }
-        enemyAction(player, dun.enemies(), player.getLocation());
+        enemyAction(player, dun.getListOfEnemies(), player.getLocation());
+        tui.printPlayerHealth(player);
 
     }
 
@@ -92,9 +93,10 @@ public class Controller {
                     tui.enemyAttackedPlayer(enemy);
                     continue;
                 }
+                continue;
             }
-            enemy.setAttack(false);
             enemy.move();
+            enemy.setAttack(false);
 
         }
     }
@@ -135,6 +137,7 @@ public class Controller {
             }
             case attack: {
                 String attackDeclaration = asking.split(" ", 2)[1];
+                System.out.println(attackDeclaration);
                 for (Enemy enemy : enemylist) {
                     if (enemy.getLocation() == player.getLocation() && attackDeclaration.equalsIgnoreCase(enemy.getName())) {
                         enemy.decreaseHealth(player.getDamage());

@@ -20,7 +20,8 @@ public class TUI {
     Scanner sc = new Scanner(System.in);
     String[] commands = {"1. go north", "2. go south", "3. go east",
         "4. go west", "5. help", "6. pick up item", "7. check inventory",
-        "8. check stats", "9. use <item name>"};
+        "8. check stats", "9. use <item name>", "10. attack <EnemyName> - will attack "
+            + "the first enemy if multiple enemies\nwith the same name exists"};
 
     public String askForMove() {
         System.out.println();
@@ -54,7 +55,7 @@ public class TUI {
     }
 
     public void quittingGame() {
-        System.out.println("you quitter!");
+        System.out.println("You quitter!");
     }
 
     public void winningGame() {
@@ -131,6 +132,10 @@ public class TUI {
     }
     
     public void enemyAttackedPlayer(Enemy enemy) {
-        System.out.println("You got attacked by " + enemy.getName());
+        System.out.println("You got attacked by " + enemy.getName() + " for " + enemy.getDamage());
     }
+    
+    public void printPlayerHealth(Player player) {
+        System.out.println("Your health is: " + player.getHealth());
+    } 
 }

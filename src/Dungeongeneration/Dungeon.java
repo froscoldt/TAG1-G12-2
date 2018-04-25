@@ -5,6 +5,7 @@ import Items.Potion;
 import Items.Weapon;
 import Items.Armor;
 import Units.Enemy;
+import Units.SmallEnemy;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -13,11 +14,19 @@ public class Dungeon {
     LookAndFeel laf = new LookAndFeel();
     ArrayList<Item> listOfItems = new ArrayList();
     ArrayList<Room> listOfRooms = new ArrayList();
-    EnemyGeneration eg = new EnemyGeneration();
+    ArrayList<Enemy> listOfEnemies = new ArrayList();
     Random random = new Random();
 
-    public ArrayList enemies() {
-        return eg.listOfEnemies;
+
+    public ArrayList<Enemy> getListOfEnemies() {
+        return listOfEnemies;
+    }
+
+    public void generateEnemies(ArrayList<Room> room) {
+        for (int i = 0; i < 12; i++) {
+            listOfEnemies.add(new SmallEnemy(laf.getRandomMonsterName(),
+                    room.get(random.nextInt(room.size()))));
+        }
     }
 
     public Room createMaze() {
@@ -139,7 +148,7 @@ public class Dungeon {
         //room 20
         listOfRooms.get(19).setNorth(listOfRooms.get(15));
 
-        eg.generate(listOfRooms);
+        generateEnemies(listOfRooms);
         return startRoom;
     }
 

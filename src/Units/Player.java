@@ -54,7 +54,7 @@ public class Player extends Unit {
 
     @Override
     public String stats() {
-        return "Damage: " + getDamage() + " Health: " + health + " Armor: " + armor;
+        return "Damage: " + getDamage() + " - Armor: " + armor + " - Items in backpack: "+ backpack.size();
     }
 
     @Override
@@ -93,6 +93,11 @@ public class Player extends Unit {
     @Override
     public void decreaseHealth(int damage) {
         this.health -= damage;
+    }
+
+    @Override
+    public int getHealth() {
+        return health;
     }
 
 }

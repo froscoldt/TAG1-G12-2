@@ -1,15 +1,15 @@
 package Dungeongeneration;
 
-import Items.Armor;
-import Items.Item;
-import Items.Potion;
-import Items.Weapon;
 import java.util.Random;
 
 public class LookAndFeel {
 
     Random random = new Random();
-    private final String DESC_ROOM_0 = "You got no idea how you got here, there seems only to be one entrance - this place seems erie";
+    private final String NAME_MONSTER_0 = "Zombie";
+    private final String NAME_MONSTER_1 = "Skeleton";
+    private final String NAME_MONSTER_2 = "Spectre";
+
+    private final String DESC_ROOM_0 = "What is this place?";
     private final String DESC_ROOM_1 = "A dim bluish light suffuses this chamber, its source obvious at a glance.\nBlue-glowing lichen and violet-glowing moss cling to the ceiling and spread across the floor";
     private final String DESC_ROOM_2 = "A crack in the ceiling above the middle of the north wall allows a trickle\nof water to flow down to the floor. The water pools near the base of the wall, and a rivulet runs along the wall an out into the hall.";
     private final String DESC_ROOM_3 = "This small chamber seems divided into three parts. The first has several\nhooks on the walls from which hang dusty robes. An open curtain separates that space from the next, which has a dry basin set in the floor.";
@@ -44,10 +44,10 @@ public class LookAndFeel {
     private final String[] DESC_ITEM_WEAPON_5 = {"Sharp dagger", "This light fellor is so painful, that you cant even imagine"};
     private final String[] DESC_ITEM_WEAPON_6 = {"Legendary Sword", "A sword with unbelieveable power and damage"};
     private final String[] DESC_ITEM_WEAPON_7 = {"Icy Dagger", "Forged in the deathlands in the north"};
-   
+
     private final String[] DESC_ITEM_ARMOR_0 = {"Leather Leggins", "Tailored in the slums of Valoor"};
     private final String[] DESC_ITEM_ARMOR_1 = {"Leather Helmet", "Tailored in the slums of Valoor"};
-    private final String[] DESC_ITEM_ARMOR_2 = {"Wooden Shield", "A lightweight shield, forged by\n the water golems at the lake of the green woods"  };
+    private final String[] DESC_ITEM_ARMOR_2 = {"Wooden Shield", "A lightweight shield, forged by\n the water golems at the lake of the green woods"};
     private final String[] DESC_ITEM_ARMOR_3 = {"Dark Breastplate", "This breastplate was destroyed and\n reforged by the dark dwarfs, in the darkmines"};
     private final String[] DESC_ITEM_ARMOR_4 = {"Boots of steel", "Boots of steel was forged in the the\n mines of Taloor, by the underground elven people"};
     private final String[] DESC_ITEM_ARMOR_5 = {"Leggins of steel", "The Leggins of steel was forged in\n the the mines of Taloor, by the underground elven people"};
@@ -67,6 +67,9 @@ public class LookAndFeel {
         return DESC_ROOM_25;
     }
 
+    private String[] monsterNames = {
+        NAME_MONSTER_0, NAME_MONSTER_1, NAME_MONSTER_2};
+
     private String[] roomDescriptions = {
         DESC_ROOM_1, DESC_ROOM_2, DESC_ROOM_3, DESC_ROOM_4, DESC_ROOM_5,
         DESC_ROOM_6, DESC_ROOM_7, DESC_ROOM_8, DESC_ROOM_9, DESC_ROOM_10,
@@ -74,36 +77,35 @@ public class LookAndFeel {
         DESC_ROOM_16, DESC_ROOM_17, DESC_ROOM_18, DESC_ROOM_19, DESC_ROOM_20,
         DESC_ROOM_21, DESC_ROOM_22, DESC_ROOM_23, DESC_ROOM_24};
 
-    private String[] itemWeaponInfo [] = {
-        DESC_ITEM_WEAPON_0, DESC_ITEM_WEAPON_1, 
-        DESC_ITEM_WEAPON_2, DESC_ITEM_WEAPON_3, 
-        DESC_ITEM_WEAPON_4, DESC_ITEM_WEAPON_5, 
+    private String[] itemWeaponInfo[] = {
+        DESC_ITEM_WEAPON_0, DESC_ITEM_WEAPON_1,
+        DESC_ITEM_WEAPON_2, DESC_ITEM_WEAPON_3,
+        DESC_ITEM_WEAPON_4, DESC_ITEM_WEAPON_5,
         DESC_ITEM_WEAPON_6, DESC_ITEM_WEAPON_7};
 
-    private String[] itemArmorInfo [] = {
-        DESC_ITEM_ARMOR_0, DESC_ITEM_ARMOR_1, 
-        DESC_ITEM_ARMOR_2, DESC_ITEM_ARMOR_3, 
-        DESC_ITEM_ARMOR_4, DESC_ITEM_ARMOR_5, 
+    private String[] itemArmorInfo[] = {
+        DESC_ITEM_ARMOR_0, DESC_ITEM_ARMOR_1,
+        DESC_ITEM_ARMOR_2, DESC_ITEM_ARMOR_3,
+        DESC_ITEM_ARMOR_4, DESC_ITEM_ARMOR_5,
         DESC_ITEM_ARMOR_6};
 
-    private String[] itemPotionInfo [] = {
-        DESC_ITEM_POTION_0, DESC_ITEM_POTION_1, 
-        DESC_ITEM_POTION_2, DESC_ITEM_POTION_3, 
+    private String[] itemPotionInfo[] = {
+        DESC_ITEM_POTION_0, DESC_ITEM_POTION_1,
+        DESC_ITEM_POTION_2, DESC_ITEM_POTION_3,
         DESC_ITEM_POTION_4};
-   
 
     public String[] getRoomDescriptions() {
         return roomDescriptions;
     }
 
     public String getRandomRoomDesc() {
-        return roomDescriptions[random.nextInt(24)];
-
+        return roomDescriptions[random.nextInt(roomDescriptions.length)];
     }
 
-    
-    
-    
+    public String getRandomMonsterName() {
+        return monsterNames[random.nextInt(monsterNames.length)];
+    }
+
     public String[] getRandomItemInfo(String item) {
         if (item.equalsIgnoreCase("weapon")) {
             int num = random.nextInt(itemWeaponInfo.length);
@@ -119,6 +121,5 @@ public class LookAndFeel {
         }
         return null;
     }
-
 
 }
