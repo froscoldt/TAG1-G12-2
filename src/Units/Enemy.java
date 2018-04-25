@@ -7,14 +7,17 @@ public abstract class Enemy extends Unit {
 
     private Room location;
     private String name;
+    private boolean attack = false;
     Random random = new Random();
+
     public Enemy(String name, Room location) {
         super(name, location);
         this.location = location;
         this.name = name;
     }
+
     public abstract int getHealth();
-    
+
     public void move() {
         Room[] directions = {
             location.getEast(),
@@ -22,10 +25,29 @@ public abstract class Enemy extends Unit {
             location.getSouth(),
             location.getWest()};
         Room tryMove = directions[random.nextInt(4)];
-        while (tryMove == null) {            
+        while (tryMove == null) {
             tryMove = directions[random.nextInt(4)];
         }
         setLocation(tryMove);
+    }
+
+    public boolean checkAttack() {
+        if (isAttack() == false) {
+            setAttack(true);
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    public abstract void attack(Player player);
+
+    public boolean isAttack() {
+        return attack;
+    }
+
+    public void setAttack(boolean attack) {
+        this.attack = attack;
     }
 
     @Override

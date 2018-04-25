@@ -23,8 +23,8 @@ public class Dungeon {
     public Room createMaze() {
 
         for (int i = 0; i < 18; i++) {
-            int num = random.nextInt(3);
-            if (num == 0) {
+            int num = random.nextInt(100);
+            if (num < 41) {
                 String[] weaponInfo = laf.getRandomItemInfo("weapon");
                 listOfItems.add(new Weapon(
                         weaponInfo[0],
@@ -32,7 +32,7 @@ public class Dungeon {
                         random.nextInt(10) + 10));
             }
 
-            if (num == 1) {
+            if (num >= 41 && num <= 70) {
                 String[] armorInfo = laf.getRandomItemInfo("armor");
                 listOfItems.add(new Armor(
                         armorInfo[0],
@@ -40,7 +40,7 @@ public class Dungeon {
                         random.nextInt(10) + 10));
             }
 
-            if (num == 2) {
+            if (num > 70) {
                 String[] potionInfo = laf.getRandomItemInfo("potion");
                 listOfItems.add(new Potion(
                         potionInfo[0],

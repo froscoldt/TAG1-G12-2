@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import Items.Item;
 import Units.Enemy;
+import Units.Player;
 
 /**
  *
@@ -41,7 +42,7 @@ public class TUI {
         System.out.println("Error: Wrong input. Type \"help\" in "
                 + "order to view possible commands");
     }
-    
+
     public void askForPlayerName() {
         System.out.println("Type your name: ");
     }
@@ -64,7 +65,7 @@ public class TUI {
         System.out.println(str);
 
     }
-    
+
     public void noItemInRoom() {
         System.out.println("You see no items in the room.");
     }
@@ -76,7 +77,7 @@ public class TUI {
     public void usedItem(Item item) {
         System.out.println("You used " + item.getName() + "!");
     }
-    
+
     public void noItem() {
         System.out.println("You dont have that item");
     }
@@ -84,8 +85,9 @@ public class TUI {
     public String enemyStats(Enemy enemy) {
         return String.valueOf(enemy.getHealth());
     }
+
     public void encounter(Enemy enemy) {
-        System.out.println("An enemy stands before you: "+enemy.getName() + " - HP: " +enemyStats(enemy));
+        System.out.println("An enemy stands before you: " + enemy.getName() + " - HP: " + enemyStats(enemy));
     }
 
     public int checkUse(String str) {
@@ -94,13 +96,11 @@ public class TUI {
         if (str.contains("use")) {
             use = str.split(" ")[0];
             num = (int) Integer.parseInt(str.split(" ")[1]);
-        return num;
+            return num;
         }
         return 0;
     }
 
-    
-     
     public void roomChange(Boolean bool) {
         if (bool == true) {
             System.out.println("You entered the room succesfully");
@@ -113,5 +113,24 @@ public class TUI {
         for (Object object : array) {
             System.out.println(object.toString());
         }
+
+    }
+
+    public void enemyDeath(Enemy enemy) {
+        System.out.println("You killed " + enemy.getName());
+    }
+
+    public void enemyDamageTaken(Enemy enemy, Player player) {
+        System.out.println("you dealt " + String.valueOf(player.getDamage()) + " damage to " + enemy.getName());
+
+    }
+
+    public void enemyDoesNotExist() {
+        System.out.println("No such enemy");
+       
+    }
+    
+    public void enemyAttackedPlayer(Enemy enemy) {
+        System.out.println("You got attacked by " + enemy.getName());
     }
 }

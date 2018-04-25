@@ -95,8 +95,8 @@ public class Player extends Unit {
     }
 
     @Override
-    public void decreaseHealth(int health) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void decreaseHealth(int damage) {
+        this.health -= damage;
     }
 
 }

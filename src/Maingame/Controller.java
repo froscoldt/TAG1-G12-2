@@ -27,7 +27,6 @@ public class Controller {
     }
 
     public void awaitingAnswer(Player player) {
-        enemyAction(player, dun.enemies(), player.getLocation());
         ActionConverter ac = new ActionConverter();
         Action action;
         String askingPlayer = tui.askForMove();
@@ -52,6 +51,7 @@ public class Controller {
         if (ac.convert(askingPlayer) == null) {
             checkPlayerIfMove(player, action, askingPlayer);
         }
+        enemyAction(player, dun.enemies(), player.getLocation());
 
     }
 
@@ -87,8 +87,13 @@ public class Controller {
         for (Enemy enemy : enemies) {
             if (enemy.getLocation() == playerRoom) {
                 tui.encounter(enemy);
-                continue;
+                if (enemy.checkAttack() == true) {
+                    enemy.attack(player);
+                    tui.enemyAttackedPlayer(enemy);
+                    continue;
+                }
             }
+            enemy.setAttack(false);
             enemy.move();
 
         }
@@ -133,19 +138,15 @@ public class Controller {
                 for (Enemy enemy : enemylist) {
                     if (enemy.getLocation() == player.getLocation() && attackDeclaration.equalsIgnoreCase(enemy.getName())) {
                         enemy.decreaseHealth(player.getDamage());
-                        System.out.println("you dealt " + String.valueOf(player.getDamage()) + " damage to " + enemy.getName());
-                        if (enemy.getHealth() < 0) {
+                        tui.enemyDamageTaken(enemy, player);
+                        if (enemy.getHealth() <= 0) {
                             enemylist.remove(enemy);
-                            System.out.println("You killed " + enemy.getName());
+                            tui.enemyDeath(enemy);
                         }
-                        // tui.display damage
-
                         return;
                     }
-                     
                 }
-                // tui.noEnemy();
-                System.out.println("No such enemy");
+                tui.enemyDoesNotExist();
                 break;
             }
 
