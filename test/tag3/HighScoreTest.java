@@ -7,7 +7,6 @@ package tag3;
 
 import Highscore.Highscore;
 import Units.Player;
-import Units.Unit;
 import java.util.ArrayList;
 import org.junit.Test;
 import static org.junit.Assert.*;
@@ -30,9 +29,9 @@ public class HighScoreTest {
         p1 = new Player("Mads", null);
         p2 = new Player("Mark", null);
         p3 = new Player("Damjan", null);
-        p1.setScore(748);
-        p2.setScore(1265);
-        p3.setScore(492);
+        p1.addToScore(748);
+        p2.addToScore(1265);
+        p3.addToScore(492);
     }
 
     @Test

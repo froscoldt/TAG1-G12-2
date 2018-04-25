@@ -7,7 +7,7 @@ import java.util.ArrayList;
 public class Player extends Unit {
 
     ArrayList<Item> backpack = new ArrayList();
-    
+
     private int score = 0;
 
     private int health;
@@ -26,7 +26,7 @@ public class Player extends Unit {
         armor = BASE_ARMOR;
 
     }
-   
+
     public boolean use(int slot) {
         if (backpack.get(slot) == null) {
             return false;
@@ -44,7 +44,7 @@ public class Player extends Unit {
         return score;
     }
 
-    public void setScore(int score) {
+    public void addToScore(int score) {
         this.score += score;
     }
 
@@ -55,8 +55,6 @@ public class Player extends Unit {
     @Override
     public String stats() {
         return "Damage: " + getDamage() + " Health: " + health + " Armor: " + armor;
-
-    
     }
 
     @Override
@@ -74,7 +72,6 @@ public class Player extends Unit {
         this.damage = damage;
     }
 
-
     public void setArmor(int armor) {
         this.armor = armor;
     }
@@ -88,7 +85,6 @@ public class Player extends Unit {
     public void increaseDamage(int damage) {
         this.damage += damage;
     }
-
 
     public void increaseArmor(int armor) {
         this.armor += armor;
