@@ -72,4 +72,10 @@ public class Boss extends Enemy {
         this.health -= health;
     }
 
+    @Override
+    public boolean isDead() {
+       return this.health <= 0;
+        
+    }
+
 }

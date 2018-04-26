@@ -40,6 +40,15 @@ public abstract class Enemy extends Unit {
         }
     }
 
+    public int getMobScore(Enemy enemy) {
+        if (enemy instanceof SmallEnemy) return 25;
+        if (enemy instanceof Boss) return 150;
+        return 0;
+        
+    }
+    
+    public abstract boolean isDead();
+    
     public abstract void attack(Player player);
 
     public boolean isAttack() {

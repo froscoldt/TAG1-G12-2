@@ -29,7 +29,7 @@ public class SmallEnemy extends Enemy {
         return "Damage: " + getDamage() + " Health: " + health;
 
     }
-
+    
     @Override
     public int getDamage() {
         return damage;
@@ -68,6 +68,12 @@ public class SmallEnemy extends Enemy {
     public void attack(Player player) {
         player.decreaseHealth(this.damage);
 
+    }
+
+    @Override
+    public boolean isDead() {
+       return this.health <= 0;
+        
     }
 
 }

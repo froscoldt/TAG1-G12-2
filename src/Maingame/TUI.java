@@ -38,7 +38,7 @@ public class TUI {
         System.out.println();
         String input = sc.nextLine();
         System.out.println("--------------------------------------------------------------------");
-        return "help";
+        return input;
     }
 
     public void intro() {
