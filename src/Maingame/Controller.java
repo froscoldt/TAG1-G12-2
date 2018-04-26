@@ -6,7 +6,6 @@ import Dungeongeneration.Dungeon;
 import Dungeongeneration.Room;
 import Highscore.Highscore;
 import Highscore.Timescore;
-import Units.Boss;
 import Units.Enemy;
 import Units.Player;
 import java.util.ArrayList;
@@ -26,22 +25,21 @@ public class Controller {
         p = new Player(tui.askForMove(), starting);
         tui.intro();
         tui.printString(p.getLocation().getDesc());
-        while (p.getHealth() > 0 && (p.getLocation() != dun.getListOfRooms().get(19) || dun.getListOfEnemies().contains(dun.getBoss())== true)) {
+        while (p.getHealth() > 0 && (p.getLocation() != dun.getListOfRooms().get(19) || dun.getListOfEnemies().contains(dun.getBoss()) == true)) {
             awaitingAnswer((Player) p);
-            
-            
-            
         }
         tui.winningGame();
         timeScores();
+        tui.printPlayerScoreForThisGame((Player) p, timescore);
         printScores();
-        
+
     }
+
     public void timeScores() {
         timescore.endTimer();
-        timescore.setScoreBasedOnTime((Player) p);    
+        timescore.setScoreBasedOnTime((Player) p);
     }
-    
+
     public void printScores() {
         Highscore highscore = new Highscore((Player) p);
         highscore.writeHighScoreToTable(highscore);
@@ -120,7 +118,7 @@ public class Controller {
                 tui.encounter(enemy);
                 if (enemy.checkAttack() == true) {
                     enemy.attack(player);
-                    tui.enemyAttackedPlayer(enemy);
+                    tui.enemyAttackedPlayer(enemy, player);
                     if (player.getHealth() <= 0) {
                         tui.printPlayerHealth(player);
                         tui.losingGame();

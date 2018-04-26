@@ -27,6 +27,10 @@ public class Player extends Unit {
 
     }
 
+    public int getArmor() {
+        return armor;
+    }
+
     @Override
     public String toString() {
         return super.getName() + " " + this.score;

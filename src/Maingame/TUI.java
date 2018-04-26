@@ -1,8 +1,8 @@
-
 package Maingame;
 
 import Dungeongeneration.Room;
 import Highscore.Highscore;
+import Highscore.Timescore;
 import Items.Armor;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -38,13 +38,17 @@ public class TUI {
         ArrayList<Highscore> h = highscore.getHighScoreTable();
         System.out.println("- HIGHSCORES -");
         for (int i = 0; i < 5; i++) {
-            System.out.println((i+1) + ". " + h.get(i).getPlayer() + "'s highscore: " + h.get(i).getHighScore());
+            System.out.println((i + 1) + ". " + h.get(i).getPlayer() + "'s highscore: " + h.get(i).getHighScore());
         }
 
     }
+    
+    public void printPlayerScoreForThisGame(Player player, Timescore timescore) {
+        System.out.println("Your highscore this round: " + player.getScore() + "\n");
+    }
 
     public void intro() {
-        System.out.println("Welcome to our game." 
+        System.out.println("Welcome to our game."
                 + "\nIn this game you have to walk through rooms, find items, slay monsters."
                 + "\nTo win the game you have to kill the boss and find the exit room."
                 + "\n <The boss is named \"Ronnie\" and is wandering through the dungeon>"
@@ -79,6 +83,7 @@ public class TUI {
     public void losingGame() {
         System.out.println("\n - You lost - \n");
     }
+
     public void winningGame() {
         System.out.println("\n - You found the exit. You won! - \n");
     }
@@ -165,8 +170,12 @@ public class TUI {
 
     }
 
-    public void enemyAttackedPlayer(Enemy enemy) {
-        System.out.println("You got attacked by " + enemy.getName() + " for " + enemy.getDamage());
+    public void enemyAttackedPlayer(Enemy enemy, Player player) {
+        if (player.getArmor() >= 10) {
+            System.out.println("You got attacked by " + enemy.getName() + " for " + enemy.getDamage() + " (-" + player.getArmor() / 10 + ")");
+        } else {
+            System.out.println("You got attacked by " + enemy.getName() + " for " + enemy.getDamage());
+        }
     }
 
     public void printPlayerHealth(Player player) {

@@ -48,4 +48,17 @@ public class Timescore {
         }
         p.addToScore(this.score);
     }
+
+    public int getScoreBasedOnTime() {
+        if (this.timeUsed <= 360) {
+            return 500;
+        }
+        if (this.timeUsed >= 361 && this.timeUsed <= 480) {
+            return 250;
+        }
+        if (this.timeUsed >= 481 && this.timeUsed <= 600) {
+            return 100;
+        }
+        return 0;
+    }
 }

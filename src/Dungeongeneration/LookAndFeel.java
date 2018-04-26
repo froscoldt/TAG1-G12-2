@@ -34,7 +34,7 @@ public class LookAndFeel {
     private final String DESC_ROOM_22 = "A strange ceiling is the focal point of the room before you. \nIt's honeycombed with hundreds of holes about as wide as your head.";
     private final String DESC_ROOM_23 = "Water rushes down from several holes in the ceiling, and each hole is roughly a foot wide. \nThe water pours in columns that fall through similar holes in the floor, \nflowing down to some unknown depth.";
     private final String DESC_ROOM_24 = "You find this chamber lit dimly by guttering candles that squat in small hills of melted wax.";
-    private final String DESC_ROOM_25 = "You see an exit, but magic bars the way.. Maybe it is tied to the boss?";
+    private final String DESC_ROOM_25 = "You see an exit";
 
     private final String[] DESC_ITEM_WEAPON_0 = {"Dwarf forged dagger", "This item was forged in the dark mines of Milenia"};
     private final String[] DESC_ITEM_WEAPON_1 = {"Elven forged dagger", "This items was forged in woods of Taloor"};

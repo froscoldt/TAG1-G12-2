@@ -8,7 +8,6 @@ import Units.Boss;
 import Units.Enemy;
 import Units.SmallEnemy;
 import java.util.ArrayList;
-import java.util.Objects;
 import java.util.Random;
 
 public class Dungeon {
@@ -50,7 +49,7 @@ public class Dungeon {
                 listOfItems.add(new Weapon(
                         weaponInfo[0],
                         weaponInfo[1],
-                        random.nextInt(10) + 10));
+                        random.nextInt(10) + 6));
             }
 
             if (num >= 41 && num <= 70) {
@@ -58,7 +57,7 @@ public class Dungeon {
                 listOfItems.add(new Armor(
                         armorInfo[0],
                         armorInfo[1],
-                        random.nextInt(10) + 10));
+                        random.nextInt(10) + 3));
             }
 
             if (num > 70) {
@@ -66,7 +65,7 @@ public class Dungeon {
                 listOfItems.add(new Potion(
                         potionInfo[0],
                         potionInfo[1],
-                        random.nextInt(10) + 10));
+                        random.nextInt(10) + 20));
             }
 
         }
