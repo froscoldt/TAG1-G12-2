@@ -153,6 +153,7 @@ public class TUI {
         for (Object object : array) {
             System.out.println(object.toString());
         }
+        System.out.println();
 
     }
 
