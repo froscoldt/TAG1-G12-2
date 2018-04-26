@@ -6,6 +6,10 @@ public class Armor extends Item {
 
     private int armor;
 
+    public int getArmor() {
+        return armor;
+    }
+
     public Armor(String name, String description, int armor) {
         super(name, description);
         this.armor = armor;

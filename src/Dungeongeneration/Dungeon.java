@@ -4,6 +4,7 @@ import Items.Item;
 import Items.Potion;
 import Items.Weapon;
 import Items.Armor;
+import Units.Boss;
 import Units.Enemy;
 import Units.SmallEnemy;
 import java.util.ArrayList;
@@ -17,6 +18,10 @@ public class Dungeon {
     ArrayList<Enemy> listOfEnemies = new ArrayList();
     Random random = new Random();
 
+    public ArrayList<Room> getListOfRooms() {
+        return listOfRooms;
+    }
+
 
     public ArrayList<Enemy> getListOfEnemies() {
         return listOfEnemies;
@@ -27,6 +32,7 @@ public class Dungeon {
             listOfEnemies.add(new SmallEnemy(laf.getRandomMonsterName(),
                     room.get(random.nextInt(room.size()))));
         }
+        listOfEnemies.add(new Boss("Ronnie", listOfRooms.get(19)));
     }
 
     public Room createMaze() {
@@ -66,6 +72,9 @@ public class Dungeon {
                     laf.getRandomRoomDesc(), listOfItems.get(random.nextInt(18))));
         }
         Room bossRoom = new Room("", laf.getDESC_25(), null);
+        
+        
+        
         listOfRooms.add(bossRoom);
 
         //startroom

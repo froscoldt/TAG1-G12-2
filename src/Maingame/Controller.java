@@ -17,13 +17,16 @@ public class Controller {
     Unit p = null;
 
     public void go() {
+        boolean gameFinish;
         tui.askForPlayerName();
         p = new Player(tui.askForMove(), starting);
         tui.intro();
         tui.printString(p.getLocation().getDesc());
-        while (true) {
+        while (p.getHealth() > 0 && p.getLocation() != dun.getListOfRooms().get(19)) {
             awaitingAnswer((Player) p);
         }
+        // print score
+        
     }
 
     public void awaitingAnswer(Player player) {
@@ -62,22 +65,22 @@ public class Controller {
 
             case GoNorth: {
                 tui.roomChange(player.goNorth());
-                tui.printString(player.getLocation().getDesc());
+                tui.getRoomDesc(player.getLocation());
                 break;
             }
             case GoSouth: {
                 tui.roomChange(player.goSouth());
-                tui.printString(player.getLocation().getDesc());
+                tui.getRoomDesc(player.getLocation());
                 break;
             }
             case GoEast: {
                 tui.roomChange(player.goEast());
-                tui.printString(player.getLocation().getDesc());
+                tui.getRoomDesc(player.getLocation());
                 break;
             }
             case GoWest: {
                 tui.roomChange(player.goWest());
-                tui.printString(player.getLocation().getDesc());
+                tui.getRoomDesc(player.getLocation());
                 break;
             }
         }

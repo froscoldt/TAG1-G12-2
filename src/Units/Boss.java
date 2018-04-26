@@ -13,8 +13,8 @@ public class Boss extends Enemy {
 
     private Random random = new Random();
 
-    private final int addRandomHealth = 0 - random.nextInt(15) - 10;
-    // adds health of -10 to 5 
+    private final int addRandomHealth = 0 + random.nextInt(15) + 10;
+    // adds health of 10 to 25 
     private final int addRandomDamage = random.nextInt(10) - 5;
     // adds damage of -5 to 5 
 
@@ -24,6 +24,7 @@ public class Boss extends Enemy {
         health = BASE_HEALTH + addRandomHealth;
     }
 
+    // public String 
     @Override
     public String stats() {
         return "Damage: " + getDamage() + " Health: " + health;
@@ -56,19 +57,19 @@ public class Boss extends Enemy {
     }
 
     @Override
+    public void attack(Player player) {
+        player.decreaseHealth(this.damage);
+
+    }
+
+    @Override
     public int getHealth() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return health;
     }
 
     @Override
     public void decreaseHealth(int health) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        this.health -= health;
     }
-
-    @Override
-    public void attack(Player player) {
-    }
-
-
 
 }

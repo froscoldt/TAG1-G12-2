@@ -5,9 +5,13 @@
  */
 package Maingame;
 
+import Dungeongeneration.Room;
+import Items.Armor;
 import java.util.ArrayList;
 import java.util.Scanner;
 import Items.Item;
+import Items.Potion;
+import Items.Weapon;
 import Units.Enemy;
 import Units.Player;
 
@@ -18,16 +22,23 @@ import Units.Player;
 public class TUI {
 
     Scanner sc = new Scanner(System.in);
-    String[] commands = {"1. go north", "2. go south", "3. go east",
-        "4. go west", "5. help", "6. pick up item", "7. check inventory",
-        "8. check stats", "9. use <item name>", "10. attack <EnemyName> - will attack "
-            + "the first enemy if multiple enemies\nwith the same name exists"};
+    String[] commands = {
+        "1. go north", 
+        "2. go south", 
+        "3. go east",
+        "4. go west", 
+        "5. help                    - hopefully self explanatory", 
+        "6. pick up item            - picks up an item in the room", 
+        "7. check inventory         - lists all items and their descriptions in your inventory",
+        "8. check stats             - gives you stats over damage, armor and inventory count",  
+        "9. use <item name>         - uses an item from your inventory with the name specified", 
+        "10. attack <EnemyName>     - will attack the first enemy if multiple enemies with the same name exists"};
 
     public String askForMove() {
         System.out.println();
         String input = sc.nextLine();
         System.out.println("--------------------------------------------------------------------");
-        return input;
+        return "help";
     }
 
     public void intro() {
@@ -44,6 +55,9 @@ public class TUI {
                 + "order to view possible commands");
     }
 
+    public void getRoomDesc(Room room) {
+        System.out.println("\n- "+room.getDesc()+" -\n");
+    } 
     public void askForPlayerName() {
         System.out.println("Type your name: ");
     }
@@ -76,7 +90,20 @@ public class TUI {
     }
 
     public void usedItem(Item item) {
-        System.out.println("You used " + item.getName() + "!");
+        String type = "";
+        if (item instanceof Weapon) {
+            type = "damage increased by " + ((Weapon) item).getDamage();
+        }
+        
+        if (item instanceof Potion) {
+            type = "health increased by " + ((Potion) item).getHealing();
+        }
+        
+        if (item instanceof Armor) {
+            type = "armor increased by " + ((Armor) item).getArmor();
+        }
+        
+        System.out.println("You used " + item.getName() + "!\nYour " + type);
     }
 
     public void noItem() {

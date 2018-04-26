@@ -11,6 +11,10 @@ public class Potion extends Item {
         this.healing = healing;
     }
 
+    public int getHealing() {
+        return healing;
+    }
+
 
     @Override
     public void use(Player player) {
