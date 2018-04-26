@@ -6,10 +6,10 @@ import java.util.Random;
 public class Boss extends Enemy {
 
     private int health;
-    private static final int BASE_HEALTH = 1000;
+    private static final int BASE_HEALTH = 200;
 
     private int damage;
-    private static final int BASE_DAMAGE = 25;
+    private static final int BASE_DAMAGE = 15;
 
     private Random random = new Random();
 

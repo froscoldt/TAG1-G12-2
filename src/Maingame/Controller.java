@@ -6,6 +6,7 @@ import Dungeongeneration.Dungeon;
 import Dungeongeneration.Room;
 import Highscore.Highscore;
 import Highscore.Timescore;
+import Units.Boss;
 import Units.Enemy;
 import Units.Player;
 import java.util.ArrayList;
@@ -15,6 +16,7 @@ public class Controller {
     TUI tui = new TUI();
     Dungeon dun = new Dungeon();
     Room starting = dun.createMaze();
+    Timescore timescore = new Timescore();
 
     Unit p = null;
 
@@ -24,20 +26,29 @@ public class Controller {
         p = new Player(tui.askForMove(), starting);
         tui.intro();
         tui.printString(p.getLocation().getDesc());
-        Timescore timescore = new Timescore();
-        while (p.getHealth() > 0 && p.getLocation() != dun.getListOfRooms().get(19)) {
+        while (p.getHealth() > 0 && (p.getLocation() != dun.getListOfRooms().get(19) || dun.getListOfEnemies().contains(dun.getBoss())== true)) {
             awaitingAnswer((Player) p);
+            
+            
+            
         }
+        tui.winningGame();
+        timeScores();
+        printScores();
+        
+    }
+    public void timeScores() {
         timescore.endTimer();
-        timescore.setScoreBasedOnTime((Player) p);
+        timescore.setScoreBasedOnTime((Player) p);    
+    }
+    
+    public void printScores() {
         Highscore highscore = new Highscore((Player) p);
         highscore.writeHighScoreToTable(highscore);
         highscore.readHighScoreTable();
-        for (Highscore h : highscore.getHighScoreTable()) {
-            System.out.println(h.toString());
-        }
+        highscore.setHighScoreTable(highscore.sortHighScore(highscore.getHighScoreTable()));
+        tui.printScore(highscore);
     }
-
 
     public void awaitingAnswer(Player player) {
         ActionConverter ac = new ActionConverter();
@@ -48,11 +59,11 @@ public class Controller {
         while (action == null) {
             if (askingPlayer.equalsIgnoreCase("help")) {
                 tui.help();
-                System.out.println("hej");
                 return;
             }
             if (askingPlayer.equalsIgnoreCase("quit")) {
                 tui.quittingGame();
+                printScores();
                 System.exit(0);
 
             }
@@ -110,6 +121,12 @@ public class Controller {
                 if (enemy.checkAttack() == true) {
                     enemy.attack(player);
                     tui.enemyAttackedPlayer(enemy);
+                    if (player.getHealth() <= 0) {
+                        tui.printPlayerHealth(player);
+                        tui.losingGame();
+                        printScores();
+                        System.exit(0);
+                    }
                     continue;
                 }
                 continue;
@@ -129,6 +146,7 @@ public class Controller {
                 }
                 player.addItemToInventory(player.getLocation().getRoomItem());
                 tui.pickUpItem(player.getLocation().getRoomItem());
+                player.addToScore(1);
                 player.getLocation().setRoomItem(null);
                 break;
             }
@@ -157,7 +175,6 @@ public class Controller {
             }
             case attack: {
                 String attackDeclaration = asking.split(" ", 2)[1];
-                System.out.println(attackDeclaration);
                 for (Enemy enemy : enemylist) {
                     if (enemy.getLocation() == player.getLocation() && attackDeclaration.equalsIgnoreCase(enemy.getName())) {
                         enemy.decreaseHealth(player.getDamage());

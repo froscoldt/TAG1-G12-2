@@ -27,6 +27,11 @@ public class Player extends Unit {
 
     }
 
+    @Override
+    public String toString() {
+        return super.getName() + " " + this.score;
+    }
+
     public boolean use(int slot) {
         if (backpack.get(slot) == null) {
             return false;

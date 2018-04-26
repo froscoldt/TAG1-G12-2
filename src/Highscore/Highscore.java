@@ -8,11 +8,12 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Comparator;
 
-public class Highscore {
-    
+public class Highscore implements Serializable {
+        
     private String player;
     private int highScore;
     private ArrayList<Highscore> highScoreTable = new ArrayList();
@@ -21,6 +22,12 @@ public class Highscore {
     public Highscore() {
     }
 
+    
+    public String toString(Player player) {
+        return "Highscore{" + "player=" + player.getName() + player.getScore() + '}';
+    }
+
+    
     public Highscore(Player p) {
         this.player = p.getName();
         this.highScore = p.getScore();
