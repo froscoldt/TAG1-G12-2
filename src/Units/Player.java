@@ -54,7 +54,7 @@ public class Player extends Unit {
 
     @Override
     public String stats() {
-        return "Damage: " + getDamage() + " - Armor: " + armor + " - Items in backpack: "+ backpack.size();
+        return "Damage: " + getDamage() + " - Armor: " + armor + " - Items in backpack: " + backpack.size();
     }
 
     @Override

@@ -67,29 +67,29 @@ public class LookAndFeel {
         return DESC_ROOM_25;
     }
 
-    private String[] monsterNames = {
+    private final String[] monsterNames = {
         NAME_MONSTER_0, NAME_MONSTER_1, NAME_MONSTER_2};
 
-    private String[] roomDescriptions = {
+    private final String[] roomDescriptions = {
         DESC_ROOM_1, DESC_ROOM_2, DESC_ROOM_3, DESC_ROOM_4, DESC_ROOM_5,
         DESC_ROOM_6, DESC_ROOM_7, DESC_ROOM_8, DESC_ROOM_9, DESC_ROOM_10,
         DESC_ROOM_11, DESC_ROOM_12, DESC_ROOM_13, DESC_ROOM_14, DESC_ROOM_15,
         DESC_ROOM_16, DESC_ROOM_17, DESC_ROOM_18, DESC_ROOM_19, DESC_ROOM_20,
         DESC_ROOM_21, DESC_ROOM_22, DESC_ROOM_23, DESC_ROOM_24};
 
-    private String[] itemWeaponInfo[] = {
+    private final String[] itemWeaponInfo[] = {
         DESC_ITEM_WEAPON_0, DESC_ITEM_WEAPON_1,
         DESC_ITEM_WEAPON_2, DESC_ITEM_WEAPON_3,
         DESC_ITEM_WEAPON_4, DESC_ITEM_WEAPON_5,
         DESC_ITEM_WEAPON_6, DESC_ITEM_WEAPON_7};
 
-    private String[] itemArmorInfo[] = {
+    private final String[] itemArmorInfo[] = {
         DESC_ITEM_ARMOR_0, DESC_ITEM_ARMOR_1,
         DESC_ITEM_ARMOR_2, DESC_ITEM_ARMOR_3,
         DESC_ITEM_ARMOR_4, DESC_ITEM_ARMOR_5,
         DESC_ITEM_ARMOR_6};
 
-    private String[] itemPotionInfo[] = {
+    private final String[] itemPotionInfo[] = {
         DESC_ITEM_POTION_0, DESC_ITEM_POTION_1,
         DESC_ITEM_POTION_2, DESC_ITEM_POTION_3,
         DESC_ITEM_POTION_4};
